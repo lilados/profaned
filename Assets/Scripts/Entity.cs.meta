@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 3885aaac4c966874a9715e3f7d6e7592
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - inventory: {instanceID: 0}
+  - hpBar: {fileID: 6235680683877683861, guid: 430adc7020d320745b5608ae26da7723, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
