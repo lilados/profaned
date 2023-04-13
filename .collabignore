@@ -20,7 +20,6 @@ ehthumbs.db
 *.csproj
 *.pidb
 *.suo
-*.sln
 *.user
 *.unityproj
 *.booproj
