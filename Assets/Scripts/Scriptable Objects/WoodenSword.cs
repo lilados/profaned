@@ -6,6 +6,7 @@ public class WoodenSword : MeleeWeapon
 {
     public override void WeaponEffect(GameObject sender, GameObject other)
     {
+        base.WeaponEffect(sender,other);
         MeleeAttack meleeAttack = sender.GetComponent<MeleeAttack>();
         other.GetComponent<HealthManager>().TakeDamage(meleeAttack._weapon.damage);
     }

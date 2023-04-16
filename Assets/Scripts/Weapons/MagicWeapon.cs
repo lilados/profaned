@@ -5,11 +5,12 @@ using Weapons.Damage;
 
 public class MagicWeapon : Weapon
 {
+    [Header("Stats")]
     public int damage;
     public int manaCost;
     public float castSpeed;
-
-
+    [Space]
+    [Header("Misc")]
     public Projectile_Magic magic;
     public GameObject prefab;
     
@@ -18,6 +19,6 @@ public class MagicWeapon : Weapon
         float angle = Utility.AngleTowardsMouse(object_weapon.transform.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle));
 
-        Instantiate(prefab, object_weapon.transform.position, rot);
+        Instantiate(prefab, object_weapon.transform.position, rot);    
     }
 }

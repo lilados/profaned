@@ -19,7 +19,11 @@ MonoBehaviour:
   MaximumStacks: 1
   EquipmentType: 9
   DegreeOffset: 90
-  damage: 13
+  damage: 20
   radius: 0.6
   attackSpeed: 18
+  knockForce: 20
+  time: 0.2
+  critChance: 70
+  critDmg: 1.2
   animator: {fileID: 9100000, guid: 25fdd5edbb016b94fa85b32b396093c4, type: 2}

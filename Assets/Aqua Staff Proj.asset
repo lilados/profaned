@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: b58eae743f4ac7541b9eced1fe454d7d, type: 3}
   damage: 11
+  knockForce: 5
   velocity: 5
+  time: 0.2
   prefab: {fileID: 990402569111725196, guid: 8044a142c9089dc44933d75d8137e03b, type: 3}
+  rb: {fileID: 0}

@@ -87,11 +87,12 @@ public class MeleeAttack : MonoBehaviour
     {
         foreach (Collider2D collider in Physics2D.OverlapCircleAll(circle.position, radius))
         {
-            
             if (collider.CompareTag("Enemy") || collider.CompareTag("Mineral"))
             {
                 _weapon.WeaponEffect( gameObject, collider.gameObject);
             } 
         }
     }
+
+    
 }

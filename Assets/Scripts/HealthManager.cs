@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = System.Random;
 
 public class HealthManager : MonoBehaviour
@@ -16,6 +18,8 @@ public class HealthManager : MonoBehaviour
     [Space]
     [Header("Defense Stats")]
     public int def;
+
+    public Image image;
     void Start()
     {
         maxHealth = (int)(baseHealth * (healthMult + 1));
@@ -35,7 +39,9 @@ public class HealthManager : MonoBehaviour
     public void TakeDamage(int amount)
     {
         health -= amount;
-        
+        Instantiate(image, transform.position, transform.rotation);
+        image.transform.position = gameObject.transform.position;
+        image.transform.Find("Text").GetComponent<TextMeshProUGUI>().SetText(amount.ToString());
         if (health <= 0)
         {
             int i = 0;
