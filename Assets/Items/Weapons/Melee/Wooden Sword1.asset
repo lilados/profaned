@@ -27,3 +27,4 @@ MonoBehaviour:
   critChance: 70
   critDmg: 1.2
   animator: {fileID: 9100000, guid: 25fdd5edbb016b94fa85b32b396093c4, type: 2}
+  mod: {fileID: 11400000, guid: 8146ddd641bfc694199cd3c514781c40, type: 2}

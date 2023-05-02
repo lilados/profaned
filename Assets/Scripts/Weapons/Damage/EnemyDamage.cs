@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
+    public Modifier mod;
+    
     public PlayerHealth playerHealth;
 
     public int damage = 2;
@@ -18,6 +20,7 @@ public class EnemyDamage : MonoBehaviour
         {
             playerHealth.TakeDamage(damage);
             playerHealth.timeLeft = 6.0f;
+            col.gameObject.GetComponent<ModifierManager>().AddMod(mod, 20f, 2);
             
             Vector2 dir = (col.transform.position - gameObject.transform.position).normalized;
             col.gameObject.GetComponent<Rigidbody2D>().AddForce(dir*10, ForceMode2D.Impulse);
