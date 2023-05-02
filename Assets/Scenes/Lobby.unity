@@ -13896,7 +13896,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123a450032e8ae049b422899e6cc434f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherMod: {fileID: 0}
+  addedMod: {fileID: 0}
+  beforeMod: {fileID: 0}
   mods: []
 --- !u!1 &1115338687
 GameObject:
@@ -17010,7 +17011,7 @@ MonoBehaviour:
   - {fileID: 0}
   inventory: {fileID: 0}
   chance: 0
-  baseHealth: 0
+  baseHealth: 10
   healthMult: 0
   health: 0
   maxHealth: 10
@@ -19480,7 +19481,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123a450032e8ae049b422899e6cc434f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherMod: {fileID: 0}
+  addedMod: {fileID: 0}
+  beforeMod: {fileID: 0}
   mods: []
 --- !u!1 &1852901948
 GameObject:
@@ -28893,7 +28895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123a450032e8ae049b422899e6cc434f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherMod: {fileID: 0}
+  addedMod: {fileID: 0}
+  beforeMod: {fileID: 0}
   mods: []
 --- !u!1001 &2525370313736985930
 PrefabInstance:
@@ -28952,7 +28955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2525370315312931235, guid: 81e2007fe3b0da64488699327f76c6c0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2525370315312931236, guid: 81e2007fe3b0da64488699327f76c6c0, type: 3}
       propertyPath: _weapon
@@ -29060,7 +29063,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123a450032e8ae049b422899e6cc434f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherMod: {fileID: 0}
+  addedMod: {fileID: 0}
+  beforeMod: {fileID: 0}
   mods: []
 --- !u!1001 &4794462427859501843
 PrefabInstance:

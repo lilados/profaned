@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class HealArrow : Projectile_Ranged
 {
-    
+    public Modifier mod;
     public override void OnHit(GameObject player, GameObject enemy, GameObject arrow)
     {
         base.OnHit(player,enemy,arrow);
@@ -13,5 +13,7 @@ public class HealArrow : Projectile_Ranged
         {
             player.GetComponent<PlayerHealth>().health += 20;
         }
+        
+        enemy.GetComponent<ModifierManager>().AddMod(mod, 2f, 1, true);
     }
 }

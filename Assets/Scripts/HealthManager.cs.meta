@@ -7,7 +7,7 @@ MonoImporter:
   - inventory: {instanceID: 0}
   - image: {fileID: 1304490175290126902, guid: f659c3748023fb443b21f83203297d9b, type: 3}
   executionOrder: 0
-  icon: {instanceID: 0}
+  icon: {fileID: 2800000, guid: d11f1e2990c33d3439c39b74a33fa888, type: 3}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

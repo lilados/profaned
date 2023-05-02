@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class ModifierManager : MonoBehaviour
 {
-    public Modifier currentMod;
-    public Modifier otherMod;
+    public Modifier addedMod;
+    public Modifier beforeMod;
     public List<Modifier> mods;
 
     private void Update()
@@ -17,61 +17,83 @@ public class ModifierManager : MonoBehaviour
             mods[i].Effect(gameObject);
             if (mods[i].Ended())
             {
-                if (mods[i] == otherMod)
-                {
-                    otherMod = null;
-                }
                 RemoveMod(mods[i]);
             } } }
     
 
-    public void AddMod(Modifier mod, float dur, int stack)
+    public void AddMod(Modifier mod0, float dur, int stack, bool upgradePotential)
     {
-        currentMod = mod;
-        foreach (Modifier modBefore in mods)
+        Modifier mod = mod0.GetCopy();
+        if (mods.Count > 0)
         {
-            if (modBefore.modName == mod.modName)
+            if (ListContainsItem(mod))
             {
-                otherMod = modBefore;
+                if (mods[GetModID(mod)].Upgradeable() && upgradePotential)
+                {
+                    UpgradeMod(mod);
+                }
+                else
+                {
+                    
+                }
             }
-        }
-        if (!mods.Contains(mod))
-        {
-            mod.modDuration = dur;
-            mod.timeLeft = mod.modDuration;
-            mod.level = stack;
-            mods.Add(mod);
-            mod.AddEffect(gameObject);
-        }
+            
 
-        if (otherMod != null)
+            
+        }
+        else
         {
-            if (mod.level < otherMod.level)
-            {
-                Debug.Log("<");
-                otherMod.timeLeft = otherMod.modDuration;
-            }
-            if (mod.level > otherMod.level)
-            {
-                Debug.Log(">");
-            }
-            if (mod.level == otherMod.level && mod.Upgradeable())
-            {
-                Debug.Log("=");
-                UpgradeMod(mod);
-            }
+            AddModEffects(mod, dur, stack);
         }
     }
 
-    public void RemoveMod(Modifier mod)
+
+    private void AddModEffects(Modifier mod, float dur, int stack)
+    {
+        mod.modDuration = dur;
+        mod.timeLeft = mod.modDuration;
+        mod.level = stack;
+        mod.AddEffect(gameObject);
+        mods.Add(mod);
+    }
+    private void RemoveMod(Modifier mod)
     {
         mod.RemoveEffect(gameObject);
         mods.Remove(mod);
     }
     
-    public void UpgradeMod(Modifier mod)
+    private void UpgradeMod(Modifier mod)
     {
         RemoveMod(mod);
-        AddMod(mod, mod.modDuration, mod.level + 1);
+        AddMod(mod, mod.modDuration, mod.level + 1, true);
+    }
+
+
+    private bool ListContainsItem(Modifier mod2)
+    {
+        for (int i = 0; i < mods.Count ; i++)
+        {
+            if (mods[i].modName == mod2.modName)
+            {
+                beforeMod = mods[i];
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+
+    private int GetModID(Modifier mod5)
+    {
+        for (int i = 0; i < mods.Count; i++)
+        {
+            if (mods[i] == mod5)
+            {
+                return i;
+            }
+        }
+
+        return 0;
     }
 }

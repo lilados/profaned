@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   modName: On Fire!
   modDuration: 10
-  timeLeft: 8.597539
-  level: 2
+  timeLeft: 10
+  level: 1
   maxLevel: 2

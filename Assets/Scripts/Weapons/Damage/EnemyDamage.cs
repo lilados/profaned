@@ -20,7 +20,7 @@ public class EnemyDamage : MonoBehaviour
         {
             playerHealth.TakeDamage(damage);
             playerHealth.timeLeft = 6.0f;
-            col.gameObject.GetComponent<ModifierManager>().AddMod(mod, 20f, 2);
+            col.gameObject.GetComponent<ModifierManager>().AddMod(mod, 20f, 2, true);
             
             Vector2 dir = (col.transform.position - gameObject.transform.position).normalized;
             col.gameObject.GetComponent<Rigidbody2D>().AddForce(dir*10, ForceMode2D.Impulse);
@@ -33,8 +33,11 @@ public class EnemyDamage : MonoBehaviour
     private IEnumerator Reset(Collision2D col)
     {
         yield return new WaitForSeconds(0.2f);
-        
+
+        if (col != null)
+        {
         col.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
 
     }
 }

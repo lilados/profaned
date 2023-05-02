@@ -11,6 +11,6 @@ public class WoodenSword : MeleeWeapon
         MeleeAttack meleeAttack = sender.GetComponent<MeleeAttack>();
         other.GetComponent<HealthManager>().TakeDamage(meleeAttack._weapon.damage);
         
-        sender.GetComponent<ModifierManager>().AddMod(mod.GetCopy(), 10.0f, 1);
+        sender.GetComponent<ModifierManager>().AddMod(mod, 10.0f, 1, true);
     }
 }
