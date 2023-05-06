@@ -15,5 +15,5 @@ MonoBehaviour:
   modName: On Fire!
   modDuration: 10
   timeLeft: 10
-  level: 1
+  level: 2
   maxLevel: 2

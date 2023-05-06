@@ -1,15 +1,14 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class ModifierManager : MonoBehaviour
 {
-    public Modifier addedMod;
-    public Modifier beforeMod;
+    private Modifier addedMod;
+    private Modifier existingSimilarMod;
+    [Space]
     public List<Modifier> mods;
-
+    
+    
     private void Update()
     {
         for (int i = 0; i < mods.Count; i++)
@@ -17,83 +16,86 @@ public class ModifierManager : MonoBehaviour
             mods[i].Effect(gameObject);
             if (mods[i].Ended())
             {
-                RemoveMod(mods[i]);
-            } } }
-    
+                RemoveModEffects(mods[i]);
+            } 
+        } 
+    }
 
-    public void AddMod(Modifier mod0, float dur, int stack, bool upgradePotential)
+
+    public void AddMod(Modifier mod, float dur, int stack, bool hasUpgradePotential)
     {
-        Modifier mod = mod0.GetCopy();
+        addedMod = mod.GetCopy();
+        addedMod.modDuration = dur;
+        addedMod.timeLeft = dur;
+        addedMod.level = stack;
         if (mods.Count > 0)
         {
-            if (ListContainsItem(mod))
+            FindSimilarModifier(addedMod);
+            if (existingSimilarMod != null)
             {
-                if (mods[GetModID(mod)].Upgradeable() && upgradePotential)
+                if (addedMod.level > existingSimilarMod.level)
                 {
-                    UpgradeMod(mod);
+                    RemoveModEffects(existingSimilarMod);
+                    AddModEffects(addedMod);
+                } 
+                
+                else if (addedMod.level == existingSimilarMod.level)
+                {
+                    if (hasUpgradePotential && addedMod.Upgradeable())
+                    {
+                        RemoveModEffects(existingSimilarMod);
+                        ++addedMod.level;
+                        AddModEffects(addedMod);
+                    }
+                    else
+                    {
+                        existingSimilarMod.timeLeft = existingSimilarMod.modDuration;
+                    }
                 }
-                else
+                
+                else if (addedMod.level < existingSimilarMod.level)
                 {
-                    
+                    existingSimilarMod.timeLeft = existingSimilarMod.modDuration;
                 }
             }
-            
-
-            
+            else
+            {
+                AddModEffects(addedMod);
+            }
         }
         else
         {
-            AddModEffects(mod, dur, stack);
+            AddModEffects(addedMod);
         }
     }
 
 
-    private void AddModEffects(Modifier mod, float dur, int stack)
+    private void AddModEffects(Modifier mod)
     {
-        mod.modDuration = dur;
-        mod.timeLeft = mod.modDuration;
-        mod.level = stack;
         mod.AddEffect(gameObject);
         mods.Add(mod);
     }
-    private void RemoveMod(Modifier mod)
+
+    private void RemoveModEffects(Modifier mod)
     {
         mod.RemoveEffect(gameObject);
         mods.Remove(mod);
     }
+
     
-    private void UpgradeMod(Modifier mod)
-    {
-        RemoveMod(mod);
-        AddMod(mod, mod.modDuration, mod.level + 1, true);
-    }
-
-
-    private bool ListContainsItem(Modifier mod2)
-    {
-        for (int i = 0; i < mods.Count ; i++)
-        {
-            if (mods[i].modName == mod2.modName)
-            {
-                beforeMod = mods[i];
-                return true;
-            }
-        }
-
-        return false;
-
-    }
-
-    private int GetModID(Modifier mod5)
+    private void FindSimilarModifier(Modifier checkedMod)
     {
         for (int i = 0; i < mods.Count; i++)
         {
-            if (mods[i] == mod5)
+            if (mods[i].modName == checkedMod.modName)
             {
-                return i;
+                existingSimilarMod = mods[i];
             }
         }
-
-        return 0;
     }
 }
+
+
+    
+
+    

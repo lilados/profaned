@@ -5,6 +5,7 @@ using UnityEngine;
 public class Modifier : ScriptableObject
 {
     public string modName;
+    protected int ModId;
     public float modDuration, timeLeft;
     public int level, maxLevel;
     
@@ -49,4 +50,5 @@ public class Modifier : ScriptableObject
         }
         return false;
     }
+
 }

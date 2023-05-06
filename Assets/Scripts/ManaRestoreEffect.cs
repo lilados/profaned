@@ -6,6 +6,8 @@ public class ManaRestoreEffect : UsableItem
 
     public override void Use(Character character)
     {
-        character.player.GetComponent<MagicAttack>().mana += manaRestored;
+        if(character.player == GameObject.Find("Mage")){
+            character.player.GetComponent<MagicAttack>().mana += manaRestored;
+        }
     }
 }
