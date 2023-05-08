@@ -1,11 +1,16 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using Random = System.Random;
 
+
+public struct LootItem
+{
+    public Item Item;
+    public int Amount;
+    public float DropChance;
+}
 public class HealthManager : MonoBehaviour
 {
-    public LootItem[] possibleItems;
+    public LootItem[] PossibleItems;
     public Inventory inventory;
     [Space][Space]
     [HideInInspector] public int chance;
@@ -41,14 +46,14 @@ public class HealthManager : MonoBehaviour
         if (health <= 0)
         {
             int i = 0;
-            foreach (LootItem item in possibleItems)
+            foreach (LootItem item in PossibleItems)
             {
                 Calculate();
-                if (item.dropChance >= chance)
+                if (item.DropChance >= chance)
                 {
-                    for (int j = 0; j < item.amount ; j++)
+                    for (int j = 0; j < item.Amount ; j++)
                     {
-                        inventory.AddItem(item.item);
+                        inventory.AddItem(item.Item);
                     }
                 }
                 i++;

@@ -210,7 +210,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &4794462429249901374
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -227,7 +227,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!50 &4794462429249901375
 Rigidbody2D:
   serializedVersion: 4
@@ -284,6 +285,10 @@ MonoBehaviour:
   baseDef: 0
   defMult: 0
   def: 0
+  amountHealed: 0
+  freq: 0
+  timeLeft: 0
+  regenBlocked: 0
 --- !u!114 &4794462429249901364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +303,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 4794462428366328456}
   _weapon: {fileID: 0}
-  arrowPrefab: {fileID: 6235680683877683861, guid: 430adc7020d320745b5608ae26da7723, type: 3}
   BowPowerSlider: {fileID: 0}
   object_weapon: {fileID: 4794462428549907857}
   BowPower: 0
@@ -319,6 +323,10 @@ MonoBehaviour:
   baseSpeed: 4
   speedMult: 1.5
   speed: 3
+  station: {fileID: 0}
+  benchCraftedItems: []
+  furnaceCraftedItems: []
+  anvilCraftedItems: []
 --- !u!114 &4794462429249901370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,3 +345,13 @@ MonoBehaviour:
   MeleeSlot: {fileID: 0}
   RangedSlot: {fileID: 0}
   MagicSlot: {fileID: 0}
+  helmet: {fileID: 0}
+  chest: {fileID: 0}
+  legs: {fileID: 0}
+  acc: {fileID: 0}
+  hands: {fileID: 0}
+  feetWear: {fileID: 0}
+  arm: {fileID: 0}
+  torso: {fileID: 0}
+  neck: {fileID: 0}
+  c: {fileID: 0}

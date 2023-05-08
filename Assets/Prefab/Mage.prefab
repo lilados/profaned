@@ -201,7 +201,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2, y: 2}
+  m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -226,6 +226,10 @@ MonoBehaviour:
   baseDef: 30
   defMult: 0
   def: 30
+  amountHealed: 0
+  freq: 0
+  timeLeft: 0
+  regenBlocked: 0
 --- !u!114 &2525370315312931236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,16 +243,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: {fileID: 2525370313621186701}
-  _weapon: {fileID: 0}
-  object_weapon: {fileID: 2525370314810562796}
+  weapon: {fileID: 0}
+  objectWeapon: {fileID: 0}
   projectile: {fileID: 990402569111725196, guid: 8044a142c9089dc44933d75d8137e03b, type: 3}
+  defaultHelm: {fileID: 0}
   mana: 0
   maxMaxa: 40
   regenRate: 8
   reloadTime: 2
   timeLeft: 0
-  softCap: 0.30000001192092896
-  ManaBarSlider: {fileID: 0}
+  softCap: 0.3
+  manaBarSlider: {fileID: 0}
+  manaBlocked: 0
 --- !u!114 &2525370315312931237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,6 +270,10 @@ MonoBehaviour:
   baseSpeed: 3
   speedMult: 1
   speed: 3
+  station: {fileID: 0}
+  benchCraftedItems: []
+  furnaceCraftedItems: []
+  anvilCraftedItems: []
 --- !u!114 &2525370315312931258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,10 +288,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   facingRight: 1
   g_weapon: {fileID: 11400000, guid: 569cb3f80c4134845bbd5cee76ceb861, type: 2}
-  weapon: {fileID: 2525370314810562796}
+  hand: {fileID: 0}
   MeleeSlot: {fileID: 0}
   RangedSlot: {fileID: 0}
   MagicSlot: {fileID: 0}
+  helmet: {fileID: 0}
+  chest: {fileID: 0}
+  legs: {fileID: 0}
+  acc: {fileID: 0}
+  hands: {fileID: 0}
+  feetWear: {fileID: 0}
+  arm: {fileID: 0}
+  torso: {fileID: 0}
+  neck: {fileID: 0}
+  c: {fileID: 0}
 --- !u!50 &2525370315312931256
 Rigidbody2D:
   serializedVersion: 4
