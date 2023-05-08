@@ -567,6 +567,7 @@ GameObject:
   - component: {fileID: 56383732}
   - component: {fileID: 56383731}
   - component: {fileID: 56383733}
+  - component: {fileID: 56383734}
   m_Layer: 5
   m_Name: Slot (13)
   m_TagString: Untagged
@@ -647,6 +648,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 56383731}
   amountText: {fileID: 1780799325}
+--- !u!95 &56383734
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56383728}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &70468271
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +785,7 @@ GameObject:
   - component: {fileID: 88176211}
   - component: {fileID: 88176210}
   - component: {fileID: 88176212}
+  - component: {fileID: 88176213}
   m_Layer: 5
   m_Name: Slot (9)
   m_TagString: Untagged
@@ -843,6 +866,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 88176210}
   amountText: {fileID: 1965043180}
+--- !u!95 &88176213
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88176207}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &99883547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,6 +1075,7 @@ GameObject:
   - component: {fileID: 116698101}
   - component: {fileID: 116698100}
   - component: {fileID: 116698102}
+  - component: {fileID: 116698103}
   m_Layer: 5
   m_Name: Slot (4)
   m_TagString: Untagged
@@ -1111,6 +1156,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 116698100}
   amountText: {fileID: 1512090482}
+--- !u!95 &116698103
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116698097}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &116817062
 GameObject:
   m_ObjectHideFlags: 0
@@ -5256,6 +5322,7 @@ GameObject:
   - component: {fileID: 179024818}
   - component: {fileID: 179024817}
   - component: {fileID: 179024819}
+  - component: {fileID: 179024820}
   m_Layer: 5
   m_Name: Slot (3)
   m_TagString: Untagged
@@ -5336,6 +5403,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 179024817}
   amountText: {fileID: 331588393}
+--- !u!95 &179024820
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179024814}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &191983012
 GameObject:
   m_ObjectHideFlags: 0
@@ -6204,6 +6292,7 @@ GameObject:
   - component: {fileID: 315921613}
   - component: {fileID: 315921612}
   - component: {fileID: 315921614}
+  - component: {fileID: 315921615}
   m_Layer: 5
   m_Name: Slot (22)
   m_TagString: Untagged
@@ -6284,6 +6373,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 315921612}
   amountText: {fileID: 562289994}
+--- !u!95 &315921615
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315921610}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &331588391
 GameObject:
   m_ObjectHideFlags: 0
@@ -6431,6 +6541,7 @@ GameObject:
   - component: {fileID: 380852979}
   - component: {fileID: 380852978}
   - component: {fileID: 380852980}
+  - component: {fileID: 380852981}
   m_Layer: 5
   m_Name: Slot (21)
   m_TagString: Untagged
@@ -6511,6 +6622,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 380852978}
   amountText: {fileID: 1014208520}
+--- !u!95 &380852981
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380852976}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &386769472
 GameObject:
   m_ObjectHideFlags: 0
@@ -7098,6 +7230,7 @@ GameObject:
   - component: {fileID: 522260436}
   - component: {fileID: 522260435}
   - component: {fileID: 522260437}
+  - component: {fileID: 522260438}
   m_Layer: 5
   m_Name: Slot (20)
   m_TagString: Untagged
@@ -7178,6 +7311,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 522260435}
   amountText: {fileID: 694533365}
+--- !u!95 &522260438
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522260433}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &523084868
 GameObject:
   m_ObjectHideFlags: 0
@@ -7410,6 +7564,7 @@ GameObject:
   - component: {fileID: 538234969}
   - component: {fileID: 538234968}
   - component: {fileID: 538234970}
+  - component: {fileID: 538234971}
   m_Layer: 5
   m_Name: Slot (18)
   m_TagString: Untagged
@@ -7490,6 +7645,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 538234968}
   amountText: {fileID: 928780013}
+--- !u!95 &538234971
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538234966}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &539735370
 GameObject:
   m_ObjectHideFlags: 0
@@ -9039,6 +9215,7 @@ GameObject:
   - component: {fileID: 718276426}
   - component: {fileID: 718276425}
   - component: {fileID: 718276427}
+  - component: {fileID: 718276428}
   m_Layer: 5
   m_Name: Slot (23)
   m_TagString: Untagged
@@ -9119,6 +9296,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 718276425}
   amountText: {fileID: 577871619}
+--- !u!95 &718276428
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718276423}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &719372618
 GameObject:
   m_ObjectHideFlags: 0
@@ -9731,6 +9929,7 @@ GameObject:
   - component: {fileID: 800558983}
   - component: {fileID: 800558982}
   - component: {fileID: 800558984}
+  - component: {fileID: 800558985}
   m_Layer: 5
   m_Name: Slot (15)
   m_TagString: Untagged
@@ -9811,6 +10010,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 800558982}
   amountText: {fileID: 523084870}
+--- !u!95 &800558985
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800558980}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &801219471
 GameObject:
   m_ObjectHideFlags: 0
@@ -11077,6 +11297,7 @@ GameObject:
   - component: {fileID: 869969482}
   - component: {fileID: 869969481}
   - component: {fileID: 869969483}
+  - component: {fileID: 869969484}
   m_Layer: 5
   m_Name: Slot (19)
   m_TagString: Untagged
@@ -11157,6 +11378,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 869969481}
   amountText: {fileID: 1068636061}
+--- !u!95 &869969484
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869969479}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &886843195
 GameObject:
   m_ObjectHideFlags: 0
@@ -11472,6 +11714,7 @@ GameObject:
   - component: {fileID: 941075286}
   - component: {fileID: 941075285}
   - component: {fileID: 941075287}
+  - component: {fileID: 941075288}
   m_Layer: 5
   m_Name: Slot (16)
   m_TagString: Untagged
@@ -11552,6 +11795,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 941075285}
   amountText: {fileID: 1040665255}
+--- !u!95 &941075288
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941075283}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &946210115
 GameObject:
   m_ObjectHideFlags: 0
@@ -13231,6 +13495,7 @@ GameObject:
   - component: {fileID: 1088445117}
   - component: {fileID: 1088445116}
   - component: {fileID: 1088445118}
+  - component: {fileID: 1088445119}
   m_Layer: 5
   m_Name: Slot (12)
   m_TagString: Untagged
@@ -13311,6 +13576,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1088445116}
   amountText: {fileID: 1894740528}
+--- !u!95 &1088445119
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088445113}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1103106322
 GameObject:
   m_ObjectHideFlags: 0
@@ -13694,6 +13980,7 @@ GameObject:
   - component: {fileID: 1149832030}
   - component: {fileID: 1149832029}
   - component: {fileID: 1149832031}
+  - component: {fileID: 1149832032}
   m_Layer: 5
   m_Name: Slot (7)
   m_TagString: Untagged
@@ -13774,6 +14061,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1149832029}
   amountText: {fileID: 1457781052}
+--- !u!95 &1149832032
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149832026}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1166580061
 GameObject:
   m_ObjectHideFlags: 0
@@ -14250,6 +14558,7 @@ GameObject:
   - component: {fileID: 1194770896}
   - component: {fileID: 1194770895}
   - component: {fileID: 1194770897}
+  - component: {fileID: 1194770898}
   m_Layer: 5
   m_Name: Slot (8)
   m_TagString: Untagged
@@ -14330,6 +14639,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1194770895}
   amountText: {fileID: 2127908708}
+--- !u!95 &1194770898
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194770892}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1209821091
 GameObject:
   m_ObjectHideFlags: 0
@@ -14434,6 +14764,7 @@ GameObject:
   - component: {fileID: 1219292598}
   - component: {fileID: 1219292597}
   - component: {fileID: 1219292599}
+  - component: {fileID: 1219292600}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -14514,6 +14845,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1219292597}
   amountText: {fileID: 1637866019}
+--- !u!95 &1219292600
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219292594}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 80f58c6836216d84588d85e2396426f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1223290712
 GameObject:
   m_ObjectHideFlags: 0
@@ -15994,6 +16346,7 @@ GameObject:
   - component: {fileID: 1468702668}
   - component: {fileID: 1468702667}
   - component: {fileID: 1468702669}
+  - component: {fileID: 1468702670}
   m_Layer: 5
   m_Name: Slot (14)
   m_TagString: Untagged
@@ -16074,6 +16427,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1468702667}
   amountText: {fileID: 1745625749}
+--- !u!95 &1468702670
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468702664}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1476586342
 GameObject:
   m_ObjectHideFlags: 0
@@ -16710,6 +17084,7 @@ GameObject:
   - component: {fileID: 1580737030}
   - component: {fileID: 1580737032}
   - component: {fileID: 1580737031}
+  - component: {fileID: 1580737033}
   m_Layer: 5
   m_Name: DraggableItem
   m_TagString: Untagged
@@ -16775,6 +17150,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580737029}
   m_CullTransparentMesh: 1
+--- !u!95 &1580737033
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580737029}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1595808815
 GameObject:
   m_ObjectHideFlags: 0
@@ -17486,6 +17882,7 @@ GameObject:
   - component: {fileID: 1681603044}
   - component: {fileID: 1681603043}
   - component: {fileID: 1681603045}
+  - component: {fileID: 1681603046}
   m_Layer: 5
   m_Name: Slot (10)
   m_TagString: Untagged
@@ -17566,6 +17963,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1681603043}
   amountText: {fileID: 963820434}
+--- !u!95 &1681603046
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681603040}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1686833271
 GameObject:
   m_ObjectHideFlags: 0
@@ -17805,6 +18223,7 @@ GameObject:
   - component: {fileID: 1733074466}
   - component: {fileID: 1733074465}
   - component: {fileID: 1733074467}
+  - component: {fileID: 1733074468}
   m_Layer: 5
   m_Name: Slot (11)
   m_TagString: Untagged
@@ -17885,6 +18304,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1733074465}
   amountText: {fileID: 820187047}
+--- !u!95 &1733074468
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733074462}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1745625747
 GameObject:
   m_ObjectHideFlags: 0
@@ -18108,6 +18548,7 @@ GameObject:
   - component: {fileID: 1778072106}
   - component: {fileID: 1778072105}
   - component: {fileID: 1778072107}
+  - component: {fileID: 1778072108}
   m_Layer: 5
   m_Name: Slot (17)
   m_TagString: Untagged
@@ -18188,6 +18629,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1778072105}
   amountText: {fileID: 263525634}
+--- !u!95 &1778072108
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778072103}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1780799323
 GameObject:
   m_ObjectHideFlags: 0
@@ -18546,6 +19008,7 @@ GameObject:
   - component: {fileID: 1797548040}
   - component: {fileID: 1797548039}
   - component: {fileID: 1797548041}
+  - component: {fileID: 1797548042}
   m_Layer: 5
   m_Name: Slot (1)
   m_TagString: Untagged
@@ -18626,6 +19089,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1797548039}
   amountText: {fileID: 1052482991}
+--- !u!95 &1797548042
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797548036}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1797588759
 GameObject:
   m_ObjectHideFlags: 0
@@ -26717,6 +27201,7 @@ GameObject:
   - component: {fileID: 1977928875}
   - component: {fileID: 1977928874}
   - component: {fileID: 1977928876}
+  - component: {fileID: 1977928877}
   m_Layer: 5
   m_Name: Slot (2)
   m_TagString: Untagged
@@ -26797,6 +27282,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1977928874}
   amountText: {fileID: 1658977294}
+--- !u!95 &1977928877
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977928871}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1990470977
 GameObject:
   m_ObjectHideFlags: 0
@@ -26991,6 +27497,7 @@ GameObject:
   - component: {fileID: 2008886383}
   - component: {fileID: 2008886382}
   - component: {fileID: 2008886384}
+  - component: {fileID: 2008886385}
   m_Layer: 5
   m_Name: Slot (5)
   m_TagString: Untagged
@@ -27071,6 +27578,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2008886382}
   amountText: {fileID: 240798600}
+--- !u!95 &2008886385
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008886379}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2010282797
 GameObject:
   m_ObjectHideFlags: 0
@@ -27515,6 +28043,7 @@ GameObject:
   - component: {fileID: 2042682902}
   - component: {fileID: 2042682901}
   - component: {fileID: 2042682903}
+  - component: {fileID: 2042682904}
   m_Layer: 5
   m_Name: Slot (6)
   m_TagString: Untagged
@@ -27595,6 +28124,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2042682901}
   amountText: {fileID: 2061596239}
+--- !u!95 &2042682904
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042682898}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2051837437
 GameObject:
   m_ObjectHideFlags: 0
