@@ -1,16 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-
-namespace modifiers
+namespace SOs.Modifiers
 {
     public class OnFire : Modifier
     {
         private void OnEnable()
         {
             modName = "On Fire!";
+            modId = 1;
             maxLevel = 2;
         }
 

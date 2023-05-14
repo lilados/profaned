@@ -9,14 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d8c48dfae409174c96c3e1656efe632, type: 3}
-  m_Name: New Heart Necklace
+  m_Script: {fileID: 11500000, guid: f2e50cef4f2e5e84cada86abab79d915, type: 3}
+  m_Name: Earth
   m_EditorClassIdentifier: 
-  id: 1092fbbdc9f756d41ad9aaca35045d87
-  ItemName: Heart Necklace
-  Icon: {fileID: 21300000, guid: e5c8fcd26ac229c4eb85ff489df11b3d, type: 3}
-  rarity: 5
+  id: 
+  ItemName: Earth
+  Icon: {fileID: -1203145117, guid: c8b01d58cb3c2024685ae9017cdbfc43, type: 3}
+  rarity: 3
   MaximumStacks: 1
-  EquipmentType: 7
-  key: 103
+  animator: {fileID: 9100000, guid: 80f58c6836216d84588d85e2396426f8, type: 2}
+  EquipmentType: 8
+  key: 51
   sprite: {fileID: 0}

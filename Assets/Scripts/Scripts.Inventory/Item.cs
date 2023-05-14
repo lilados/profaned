@@ -14,6 +14,8 @@ public class Item : ScriptableObject
     public int rarity;
     [Range(1,999)]
     public int MaximumStacks = 1;
+    [Space]
+    public RuntimeAnimatorController animator;
 
     protected static readonly StringBuilder sb = new StringBuilder();
 

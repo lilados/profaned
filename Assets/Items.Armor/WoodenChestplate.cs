@@ -10,7 +10,7 @@ public class WoodenChestplate : Chest
         c.player.GetComponent<PlayerHealth>().baseDef += 2;
     }
 
-    public override void Unequip(Character c)
+    public override void UnEquip(Character c)
     {
         c.player.GetComponent<PlayerHealth>().baseHealth -= 4;
         c.player.GetComponent<PlayerHealth>().baseDef -= 2;

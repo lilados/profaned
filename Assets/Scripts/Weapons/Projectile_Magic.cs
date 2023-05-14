@@ -14,7 +14,7 @@ public class Projectile_Magic : Projectile
     public virtual void OnHit(GameObject player, GameObject enemy, GameObject proj)
     {
         Vector2 dir = ((enemy.transform.position - player.transform.position).normalized)* knockForce;
-        enemy.GetComponent<Enemy>().TakeKnockback(dir, time);
+        enemy.GetComponent<KnockBackController>().TakeKnockBack(dir, time);
         if (enemy.CompareTag("Enemy"))
         {
             enemy.GetComponent<HealthManager>().TakeDamage(damage);

@@ -98,7 +98,7 @@ public class EquippableItem : Item
 	{
 		
 	}
-	public virtual void Unequip(Character c)
+	public virtual void UnEquip(Character c)
 	{
 		
 	}

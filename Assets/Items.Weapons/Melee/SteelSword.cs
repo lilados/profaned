@@ -1,17 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+using SOs.Modifiers;
 using UnityEngine;
-using modifiers;
-[CreateAssetMenu]
-public class SteelSword : MeleeWeapon
+
+namespace Items.Weapons.Melee
 {
-    
-    public override void WeaponEffect(GameObject sender, GameObject other)
+    [CreateAssetMenu]
+    public class SteelSword : MeleeWeapon
     {
-        base.WeaponEffect(sender,other);
-        MeleeAttack meleeAttack = sender.GetComponent<MeleeAttack>();
-        other.GetComponent<HealthManager>().TakeDamage(meleeAttack._weapon.damage);
+    
+        public override void WeaponEffect(GameObject sender, GameObject other)
+        {
+            base.WeaponEffect(sender,other);
+            MeleeAttack meleeAttack = sender.GetComponent<MeleeAttack>();
+            other.GetComponent<HealthManager>().TakeDamage(meleeAttack._weapon.damage);
         
-        sender.GetComponent<ModifierManager>().AddMod(CreateInstance<OnFire>(), 10.0f, 1, true);
+            sender.GetComponent<ModifierManager>().AddMod(CreateInstance<OnFire>(), 10.0f, 1, true);
+        }
     }
 }

@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Items/Equip/Necklace/Heart Necklace")]
-public class HeartNecklace : Necklace
+[CreateAssetMenu(menuName = "Items/Equip/Necklace/Furied Heart")]
+public class FuriedHeart : Necklace
 {
     public override void Equip(Character c)
     {
@@ -12,7 +12,7 @@ public class HeartNecklace : Necklace
 
         
 
-    public override void Unequip(Character c)
+    public override void UnEquip(Character c)
     {
         c.player.GetComponent<PlayerHealth>().baseHealth -= 30;
     }

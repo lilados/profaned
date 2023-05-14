@@ -13,7 +13,7 @@ public class WoodenHelmet : Helm
         c.player.GetComponent<PlayerHealth>().baseDef += 5;
     }
 
-    public override void Unequip(Character c)
+    public override void UnEquip(Character c)
     {
         c.player.GetComponent<PlayerHealth>().baseHealth -= 3;
         c.player.GetComponent<PlayerHealth>().baseDef -= 5;

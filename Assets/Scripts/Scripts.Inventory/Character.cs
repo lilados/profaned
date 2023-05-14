@@ -362,13 +362,13 @@ public class Character : MonoBehaviour
 					player.GetComponent<MagicAttack>().weapon = (MagicWeapon)dragEquipItem;
 				}
 			}
-			if (dropEquipItem != null) dropEquipItem.Unequip(this);
+			if (dropEquipItem != null) dropEquipItem.UnEquip(this);
 		}
 		if (dragItemSlot is EquipmentSlot)
 		{
 			if (dragEquipItem != null)
 			{
-				dragEquipItem.Unequip(this);
+				dragEquipItem.UnEquip(this);
 				
 				if (dragEquipItem is Helm) player.GetComponent<PlayerController>().helmet = null; player.transform.Find("Head").GetComponent<SpriteRenderer>().sprite = null;	
 				if (dragEquipItem is Chest) player.GetComponent<PlayerController>().chest = null; player.transform.Find("Chest").GetComponent<SpriteRenderer>().sprite = null;	
@@ -411,7 +411,7 @@ public class Character : MonoBehaviour
 		if (itemSlot is EquipmentSlot)
 		{
 			EquippableItem equippableItem = (EquippableItem)itemSlot.Item;
-			equippableItem.Unequip(this);
+			equippableItem.UnEquip(this);
 		}
 
 		itemSlot.Item.Destroy();
@@ -429,7 +429,7 @@ public class Character : MonoBehaviour
 				if (previousItem != null)
 				{
 					Inventory.AddItem(previousItem);
-					previousItem.Unequip(this);
+					previousItem.UnEquip(this);
 				}
 				item.Equip(this);
 			}
@@ -444,7 +444,7 @@ public class Character : MonoBehaviour
 	{
 		if (Inventory.CanAddItem(item) && EquipmentPanel.RemoveItem(item))
 		{
-			item.Unequip(this);
+			item.UnEquip(this);
 			Inventory.AddItem(item);
 		}
 	}

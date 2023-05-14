@@ -1,14 +1,9 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Dynamic;
-using Unity.VisualScripting;
+using SOs.Modifiers;
 using UnityEngine;
-using modifiers;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public Modifier mod;
     
     public PlayerHealth playerHealth;
 

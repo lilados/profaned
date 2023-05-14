@@ -17,7 +17,7 @@ public class Projectile_Ranged : Projectile
         if(enemy.CompareTag("Enemy"))
         {
             Vector2 dir = ((enemy.transform.position - player.transform.position).normalized)* knockForce;
-            enemy.GetComponent<Enemy>().TakeKnockback(dir, time);
+            enemy.GetComponent<KnockBackController>().TakeKnockBack(dir, time);
             enemy.GetComponent<HealthManager>().TakeDamage(damage);
         }
         Destroy(arrow);

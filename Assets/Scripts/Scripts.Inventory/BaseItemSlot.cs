@@ -79,6 +79,14 @@ public class BaseItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
 
 		Item = _item;
 		Amount = _amount;
+		if (_item != null)
+		{
+			if (_item.animator != null)
+			{
+				gameObject.GetComponent<Animator>().runtimeAnimatorController = Item.animator;
+			}
+		}
+		
 	}
 
 	protected virtual void OnDisable()

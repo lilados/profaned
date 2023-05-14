@@ -1,65 +1,45 @@
+using System;
 using UnityEngine;
 using Random = System.Random;
 
 
-public struct LootItem
-{
-    public Item Item;
-    public int Amount;
-    public float DropChance;
-}
+
 public class HealthManager : MonoBehaviour
 {
-    public LootItem[] PossibleItems;
-    public Inventory inventory;
-    [Space][Space]
-    [HideInInspector] public int chance;
-
-    [Header("Health Stats")] 
-    public int baseHealth;
-    public float healthMult;
-    public int health;
-    public int maxHealth;
+    [Header("Health")]
+    public int baseHealth = 30;
+    public float hpMult = 0f;
+    public int maxHealth = 30;
+    public int health = 30;
+    
     [Space]
-    [Header("Defense Stats")]
+    [Header("Defense")]
+    public int baseDef;
+    public float defMult;
     public int def;
+    [HideInInspector] public ItemDrop itemDrop;
 
     void Start()
     {
-        maxHealth = (int)(baseHealth * (healthMult + 1));
+        maxHealth = (int)(baseHealth * (hpMult + 1));
         health = maxHealth;
-        if(inventory == null)
-        {
-            inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
-        }
-    }
-
-    private void Calculate()
-    {
-        Random r = new Random();
-        chance = r.Next(0, 100);
+        itemDrop = gameObject.GetComponent<ItemDrop>();
     }
 
     public void TakeDamage(int amount)
     {
+        itemDrop.Calculate();
         health -= amount;
         if (health <= 0)
         {
-            int i = 0;
-            foreach (LootItem item in PossibleItems)
-            {
-                Calculate();
-                if (item.DropChance >= chance)
-                {
-                    for (int j = 0; j < item.Amount ; j++)
-                    {
-                        inventory.AddItem(item.Item);
-                    }
-                }
-                i++;
-            }
-            
-            Destroy(gameObject);
+            Death();
         }
     }
+
+    private void Death()
+    {
+        itemDrop.DropItems();
+        Destroy(gameObject);
+    }
 }
+

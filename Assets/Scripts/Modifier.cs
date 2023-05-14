@@ -7,6 +7,7 @@ public class Modifier : ScriptableObject
     public string modName;
     public float modDuration, timeLeft;
     public int level, maxLevel;
+    public int modId;
     
 
 

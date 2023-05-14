@@ -15,7 +15,6 @@ public class MeleeWeapon : Weapon
     public float critDmg = 1.20f;
     
 
-    public RuntimeAnimatorController animator;
 
     public virtual void WeaponEffect(GameObject sender, GameObject other)
     {
@@ -29,6 +28,6 @@ public class MeleeWeapon : Weapon
         }
         
         Vector2 dir = ((other.transform.position - sender.transform.position).normalized)* knockForce;
-        other.GetComponent<Enemy>().TakeKnockback(dir, time);
+        other.GetComponent<KnockBackController>().TakeKnockBack(dir, time);
     }
 }

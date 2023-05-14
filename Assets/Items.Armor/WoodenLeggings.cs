@@ -10,7 +10,7 @@ public class WoodenLeggings : Leggings
         c.player.GetComponent<PlayerHealth>().baseDef += 2;
     }
 
-    public override void Unequip(Character c)
+    public override void UnEquip(Character c)
     {
         c.player.GetComponent<PlayerHealth>().baseHealth -= 3;
         c.player.GetComponent<PlayerHealth>().baseDef -= 2;
