@@ -13,7 +13,7 @@ using Random = System.Random;
 [Serializable]
 public class FromList
 {
-    public LootItem[] item;
+    public List<LootItem> item;
     public int totalWeight;
     public int amountDropped;
 }
@@ -23,7 +23,7 @@ public class ItemDrop : MonoBehaviour
     [SerializeField] public FromList[] nFromList;
     public Inventory inventory;
     [HideInInspector] public int chance;
-    private List<LootItem> AddedItems;
+    public List<LootItem> AddedItems;
 
 
     private void Start()
@@ -33,7 +33,7 @@ public class ItemDrop : MonoBehaviour
             inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         }
 
-        fun2(nFromList[0]);
+        GetItem(nFromList[0]);
     }
     
     public void Calculate()
@@ -66,7 +66,7 @@ public class ItemDrop : MonoBehaviour
     private int GetTableWeight(FromList table)
     {
         table.totalWeight = 0;   
-        for (int j = 0; j < table.item.Length; j++)
+        for (int j = 0; j < table.item.Count; j++)
         {
             table.totalWeight += table.item[j].dropChance;
         }
@@ -74,27 +74,40 @@ public class ItemDrop : MonoBehaviour
         return table.totalWeight;
     }
 
-    private void fun2(FromList list)
-    {
-        int max = GetTableWeight(list);
-        CalculateForN(max);
-        
-        
-        GetItem(list);
-    }
-
+    
     private void GetItem(FromList list)
     {
-        int chance3 = 0;
-        Debug.Log(chance);
-        
-        for (int i = 0; i < list.item.Length; i++)
-        {
-            chance3 += list.item[i].dropChance;
+        int max = GetTableWeight(list);
 
-            if (chance >= chance3)
+
+        for (int j = 0; j < list.amountDropped; j++)
+        {
+            
+            CalculateForN(max);
+            int chance3 = 0;
+            Debug.Log(chance);
+            for (int i = 0; i < list.item.Count; i++)
             {
-                Debug.Log(list.item[i].item);
+                chance3 += list.item[i].dropChance;
+
+                if (chance <= chance3)
+                {
+                    Debug.Log(list.item[i].item);
+                    
+                    if (AddedItems.Contains(list.item[i]))
+                    {
+                        j--;
+                    }
+                    if (!AddedItems.Contains(list.item[i]))
+                    {
+                        max -= list.item[i].dropChance;
+                        AddedItems.Add(list.item[i]);
+                        list.item.Remove(list.item[i]);
+                    }
+
+
+                    break;
+                }
             }
         }
     }
