@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/SlashEmUp.unity
+    guid: e458ea4258d5c324c834551f9c460ff9
   m_configObjects: {}

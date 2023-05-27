@@ -3,7 +3,10 @@ guid: 0a9c50ec31d04f74787af61920e84a07
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - melee: {fileID: 2099734301479099803, guid: 13e5a8d0ef6d05f498e9f06cef2b39ab, type: 3}
+  - ranger: {fileID: 4794462429249901325, guid: ec76db1938771ae45aa62239fe3e1e13, type: 3}
+  - mage: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
