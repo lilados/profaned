@@ -38,7 +38,7 @@ public class HealthManager : MonoBehaviour
 
     private void Death()
     {
-        itemDrop.DropItems();
+        itemDrop.ManageDrops();
         Destroy(gameObject);
     }
 }

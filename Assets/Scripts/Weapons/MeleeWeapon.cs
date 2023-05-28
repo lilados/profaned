@@ -28,6 +28,9 @@ public class MeleeWeapon : Weapon
         }
         
         Vector2 dir = ((other.transform.position - sender.transform.position).normalized)* knockForce;
-        other.GetComponent<KnockBackController>().TakeKnockBack(dir, time);
+        if (other.CompareTag("Enemy"))
+        {
+            other.GetComponent<KnockBackController>().TakeKnockBack(dir, time);
+        }
     }
 }

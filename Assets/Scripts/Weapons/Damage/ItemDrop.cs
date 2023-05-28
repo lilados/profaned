@@ -32,10 +32,22 @@ public class ItemDrop : MonoBehaviour
         {
             inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         }
-
-        GetItem(nFromList[0]);
+ManageDrops();
     }
-    
+
+    public void ManageDrops()
+    {
+        DropItems();
+        foreach (FromList list in nFromList)
+        {
+            GetItem(list);
+        }
+
+        for (int j = 0; j < AddedItems.Count; j++)
+        {
+            Debug.Log(AddedItems[j].item);
+        }
+    }
     public void Calculate()
     {
         Random r = new Random();
@@ -85,14 +97,12 @@ public class ItemDrop : MonoBehaviour
             
             CalculateForN(max);
             int chance3 = 0;
-            Debug.Log(chance);
             for (int i = 0; i < list.item.Count; i++)
             {
                 chance3 += list.item[i].dropChance;
 
                 if (chance <= chance3)
                 {
-                    Debug.Log(list.item[i].item);
                     
                     if (AddedItems.Contains(list.item[i]))
                     {
@@ -104,11 +114,10 @@ public class ItemDrop : MonoBehaviour
                         AddedItems.Add(list.item[i]);
                         list.item.Remove(list.item[i]);
                     }
-
-
                     break;
                 }
             }
         }
+
     }
 }
