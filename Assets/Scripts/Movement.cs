@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 
 public class Movement : MonoBehaviour
@@ -25,7 +23,6 @@ public class Movement : MonoBehaviour
 
         transform1.position =
             transform1.position + horizontal * (Time.deltaTime * speed) + vertical * (Time.deltaTime * speed);
-        
     }
 
 

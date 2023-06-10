@@ -59,6 +59,21 @@ public class BaseItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
 		}
 	}
 
+	private void Update()
+	{
+		if (_item != null)
+		{
+			if (_item.animator != null)
+			{
+				gameObject.GetComponent<Animator>().runtimeAnimatorController = Item.animator;
+			}
+			else
+			{
+				gameObject.GetComponent<Animator>().runtimeAnimatorController = null;
+			}
+		}
+	}
+
 	public virtual bool CanAddStack(Item item, int amount = 1)
 	{
 		return Item != null && Item.ID == item.ID;
@@ -85,7 +100,12 @@ public class BaseItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
 			{
 				gameObject.GetComponent<Animator>().runtimeAnimatorController = Item.animator;
 			}
+			else
+			{
+				gameObject.GetComponent<Animator>().runtimeAnimatorController = null;
+			}
 		}
+		
 		
 	}
 

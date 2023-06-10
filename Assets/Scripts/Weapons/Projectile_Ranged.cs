@@ -9,7 +9,6 @@ public class Projectile_Ranged : Projectile
     public int damage = 20, knockForce = 5;
     public float velocity = 7, time = 0.2f;
     
-    public GameObject prefab;
     
     public virtual void OnHit(GameObject player, GameObject enemy, GameObject arrow)
     {

@@ -100,18 +100,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   normal:
-  - item: {fileID: 11400000, guid: 99d67f70c4cce3540abbe35679dc9ecb, type: 2}
+  - item: {fileID: 11400000, guid: f53bb09ea94a0574fa0ac44339b4758b, type: 2}
     amount: 2
     dropChance: 100
-  - item: {fileID: 11400000, guid: 99d67f70c4cce3540abbe35679dc9ecb, type: 2}
+  - item: {fileID: 11400000, guid: f53bb09ea94a0574fa0ac44339b4758b, type: 2}
     amount: 1
-    dropChance: 70
-  - item: {fileID: 11400000, guid: 99d67f70c4cce3540abbe35679dc9ecb, type: 2}
-    amount: 2
-    dropChance: 40
+    dropChance: 60
+  - item: {fileID: 11400000, guid: f53bb09ea94a0574fa0ac44339b4758b, type: 2}
+    amount: 1
+    dropChance: 30
   nFromList: []
   inventory: {fileID: 0}
   chance: 0
+  AddedItems: []
 --- !u!61 &8131360872055169435
 BoxCollider2D:
   m_ObjectHideFlags: 0

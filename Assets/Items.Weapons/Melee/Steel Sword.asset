@@ -14,17 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 
   ItemName: Steel Sword
-  Icon: {fileID: 21300000, guid: 36f442c980b3a5a43af4629bed663b9f, type: 3}
+  Icon: {fileID: 21300000, guid: e43e790b8fe292845ab5bdf781060a00, type: 3}
   rarity: 2
   MaximumStacks: 1
+  animator: {fileID: 9100000, guid: 53370e2501518af4f985b6226f073ad6, type: 2}
   EquipmentType: 9
   DegreeOffset: 45
   damage: 52
   radius: 0.6
-  attackSpeed: 26
+  attackSpeed: 0
   knockForce: 20
   time: 0.2
   critChance: 70
   critDmg: 1.2
-  animator: {fileID: 9100000, guid: 53370e2501518af4f985b6226f073ad6, type: 2}
-  mod: {fileID: 11400000, guid: 541f701c46a2b6a478d2ac84b9ef6c90, type: 2}

@@ -17,5 +17,42 @@ public static class Utility
         return angle;
     }
     
+    public static GameObject GetClosestEnemy(GameObject[] entities, Transform pivot)
+    {
+        GameObject closest = null;
+        float smallest = 30;
+            
+            
+        for (int i = 0; i < entities.Length; i++)
+        {
+            float dist = Vector3.Distance(entities[i].transform.position, pivot.position);
+            if (dist < smallest)
+            {
+                smallest = dist;
+                closest = entities[i];
+            }
+        }
+
+        return closest;
+    }
     
+    
+    public static GameObject GetFurthestEnemy(GameObject[] entities, Transform pivot)
+    {
+        GameObject furthest = null;
+        float largest = 0;
+            
+            
+        for (int i = 0; i < entities.Length; i++)
+        {
+            float dist = Vector3.Distance(entities[i].transform.position, pivot.position);
+            if (dist > largest)
+            {
+                largest = dist;
+                furthest = entities[i];
+            }
+        }
+
+        return furthest;
+    }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -21,8 +22,13 @@ public class PlayerHealth : MonoBehaviour
     [Header("Regeneration")]public int amountHealed;
     public float freq, timeLeft;
     public bool regenBlocked;
+
+
+    public Slider healthBar;
     void Start()
     {
+        healthBar = GameObject.Find("HealthBar").GetComponent<Slider>();
+        
         maxHealth = (int)(baseHealth * (1 + hpMult));
         health = maxHealth;
         freq = 1.0f;
@@ -40,6 +46,11 @@ public class PlayerHealth : MonoBehaviour
         if (health == maxHealth) timeLeft = freq;
         if (timeLeft < 0) timeLeft = 0;
         if (!regenBlocked && timeLeft == 0) Regenarate();
+
+
+        healthBar.maxValue = maxHealth;
+        healthBar.value = health;
+
     }
 
     private void Regenarate()

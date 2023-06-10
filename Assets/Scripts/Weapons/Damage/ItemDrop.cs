@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = System.Random;
 
@@ -32,7 +33,7 @@ public class ItemDrop : MonoBehaviour
         {
             inventory = GameObject.Find("Inventory").GetComponent<Inventory>();
         }
-ManageDrops();
+        
     }
 
     public void ManageDrops()
@@ -45,7 +46,10 @@ ManageDrops();
 
         for (int j = 0; j < AddedItems.Count; j++)
         {
-            Debug.Log(AddedItems[j].item);
+            for(int i = 0; i < AddedItems[j].amount; i++)
+            {
+                inventory.AddItem(AddedItems[j].item);
+            }
         }
     }
     public void Calculate()

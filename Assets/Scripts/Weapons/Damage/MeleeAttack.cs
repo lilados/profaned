@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MeleeAttack : MonoBehaviour
 {
@@ -10,20 +11,42 @@ public class MeleeAttack : MonoBehaviour
     public GameObject object_weapon;
     public Animator animator;
     public float delay;
+    public float waitFor;
     private bool attackBlocked;
     private bool isAttacking;
     public Transform circle;
     public float radius = 3;
-    
-    
+
+    public Slider meleeExhuast;
+
+    private void Start()
+    {
+        meleeExhuast = GameObject.Find("SpecialRatio").GetComponent<Slider>();
+        meleeExhuast.transform.GetChild(0).GetComponent<Image>().color = Color.gray;
+        meleeExhuast.transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color = new Color(0.66f, 0.66f, 0.66f);
+
+    }
+
     private void Update()
     {
+        meleeExhuast.maxValue = 1;
+        meleeExhuast.value = 1;
         if (_weapon != null)
         {
+            
+            meleeExhuast.maxValue = delay;
+            meleeExhuast.value = delay;
+            
             object_weapon.GetComponent<SpriteRenderer>().sprite = _weapon.Icon;
             if (isAttacking == false)
             {
                 Rotate();
+                waitFor = delay;
+            }else if (isAttacking && waitFor > 0)
+            {
+                waitFor -= Time.deltaTime;
+                
+                meleeExhuast.value = delay - waitFor;
             }
             radius = _weapon.radius;
             delay = (float)(2 - 0.05 * _weapon.attackSpeed);
@@ -32,12 +55,17 @@ public class MeleeAttack : MonoBehaviour
             {
                 Attack();
             }
+
+            
+            
+            
         }
 
         if (_weapon == null)
         {
             object_weapon.gameObject.GetComponent<SpriteRenderer>().sprite = null;
             object_weapon.GetComponent<Animator>().runtimeAnimatorController = null;
+
         }
     }
 

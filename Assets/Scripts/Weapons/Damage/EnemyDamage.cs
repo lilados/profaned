@@ -17,8 +17,7 @@ public class EnemyDamage : MonoBehaviour
         {
             playerHealth.TakeDamage(damage);
             playerHealth.timeLeft = 6.0f;
-            col.gameObject.GetComponent<ModifierManager>().AddMod(ScriptableObject.CreateInstance<OnFire>(), 20f, 2, true);
-            
+            gameObject.GetComponent<Animator>().SetTrigger("Attack");
             Vector2 dir = (col.transform.position - gameObject.transform.position).normalized;
             col.gameObject.GetComponent<Rigidbody2D>().AddForce(dir*10, ForceMode2D.Impulse);
 

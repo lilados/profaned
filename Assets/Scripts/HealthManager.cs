@@ -19,6 +19,8 @@ public class HealthManager : MonoBehaviour
     public int def;
     [HideInInspector] public ItemDrop itemDrop;
 
+    public int amountHealed;
+
     void Start()
     {
         maxHealth = (int)(baseHealth * (hpMult + 1));
@@ -39,7 +41,6 @@ public class HealthManager : MonoBehaviour
     private void Death()
     {
         itemDrop.ManageDrops();
-        Destroy(gameObject);
     }
 }
 
