@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class MagicAttack : MonoBehaviour
@@ -11,7 +13,7 @@ public class MagicAttack : MonoBehaviour
 
     [HideInInspector]public Helm defaultHelm;
     public float mana = 100;
-    public int maxMaxa = 100;
+    public int maxMana = 100;
 
     public int regenRate = 1;
     public float reloadTime = 2;
@@ -24,7 +26,11 @@ public class MagicAttack : MonoBehaviour
 
     public bool manaBlocked;
 
-    
+    private void Start()
+    {
+        manaBarSlider = GameObject.Find("SpecialRatio").GetComponent<Slider>();
+    }
+
     private void Update()
     {
         if (weapon != null)
@@ -38,17 +44,17 @@ public class MagicAttack : MonoBehaviour
 
         if ( gameObject.transform.Find("Head").GetComponent<SpriteRenderer>().sprite == null) gameObject.transform.Find("Head").GetComponent<SpriteRenderer>().sprite = defaultHelm.sprite;
         
-        manaBarSlider.maxValue = maxMaxa;
+        manaBarSlider.maxValue = maxMana;
         manaBarSlider.value = mana;
 
-        if (mana < maxMaxa && !manaBlocked)
+        if (mana < maxMana && !manaBlocked)
         {
             RegenMana();   
         }
 
-        if (mana > maxMaxa)
+        if (mana > maxMana)
         {
-            mana = maxMaxa;
+            mana = maxMana;
         }
         
         DecreaseReloadTime();
@@ -65,14 +71,6 @@ public class MagicAttack : MonoBehaviour
                     mana -= weapon.manaCost;
                 }
             }
-        }
-        if (weapon != null)
-        {
-            manaBarSlider.gameObject.SetActive(true);
-        }
-        else
-        {  
-            manaBarSlider.gameObject.SetActive(false);
         }
     }
 

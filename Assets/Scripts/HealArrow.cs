@@ -1,11 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 using SOs.Modifiers;
-[CreateAssetMenu]
 public class HealArrow : Projectile_Ranged
 {
+    private void OnEnable()
+    {
+        damage = 40;
+        knockForce = 10;
+        time = 0.2f;
+        velocity = 6;
+        Sprite = Resources.Load<Sprite>("healArrow");
+    }
+
     public override void OnHit(GameObject player, GameObject enemy, GameObject arrow)
     {
         base.OnHit(player,enemy,arrow);
