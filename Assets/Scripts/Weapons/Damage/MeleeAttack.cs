@@ -17,6 +17,8 @@ public class MeleeAttack : MonoBehaviour
     private bool isAttacking;
     public Transform circle;
     public float radius = 3;
+    public float critChance;
+    public float critDmg;
 
     public Slider meleeExhaust;
     [Header("Melee Stats")] public int meleeDamage;

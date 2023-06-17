@@ -21,9 +21,9 @@ public class ItemDrop : MonoBehaviour
 {
     [SerializeField] public LootItem[] normal;
     [SerializeField] public FromList[] nFromList;
-    public Inventory inventory;
+    [SerializeField]public Inventory inventory;
     [HideInInspector] public int chance;
-    public List<LootItem> AddedItems;
+    public List<LootItem> _addedItems;
 
 
     private void Start()
@@ -43,11 +43,11 @@ public class ItemDrop : MonoBehaviour
             GetItem(list);
         }
 
-        for (int j = 0; j < AddedItems.Count; j++)
+        for (int j = 0; j < _addedItems.Count; j++)
         {
-            for(int i = 0; i < AddedItems[j].amount; i++)
+            for(int i = 0; i < _addedItems[j].amount; i++)
             {
-                inventory.AddItem(AddedItems[j].item);
+                inventory.AddItem(_addedItems[j].item);
             }
         }
     }
@@ -107,14 +107,14 @@ public class ItemDrop : MonoBehaviour
                 if (chance <= chance3)
                 {
                     
-                    if (AddedItems.Contains(list.item[i]))
+                    if (_addedItems.Contains(list.item[i]))
                     {
                         j--;
                     }
-                    if (!AddedItems.Contains(list.item[i]))
+                    if (!_addedItems.Contains(list.item[i]))
                     {
                         max -= list.item[i].dropChance;
-                        AddedItems.Add(list.item[i]);
+                        _addedItems.Add(list.item[i]);
                         list.item.Remove(list.item[i]);
                     }
                     break;

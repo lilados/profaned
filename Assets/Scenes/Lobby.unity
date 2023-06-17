@@ -10232,6 +10232,7 @@ GameObject:
   - component: {fileID: 954900690}
   - component: {fileID: 954900689}
   - component: {fileID: 954900691}
+  - component: {fileID: 954900692}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -10280,6 +10281,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97cc5ccb43b7e7540a0320107a540c7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &954900692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954900688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 678b2215ca998d94b976811026427a0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &963820432
@@ -11704,7 +11717,7 @@ MonoBehaviour:
   nFromList: []
   inventory: {fileID: 0}
   chance: 0
-  AddedItems: []
+  _addedItems: []
 --- !u!95 &1112595261
 Animator:
   serializedVersion: 5
@@ -13322,7 +13335,7 @@ MonoBehaviour:
   nFromList: []
   inventory: {fileID: 0}
   chance: 0
-  AddedItems: []
+  _addedItems: []
 --- !u!114 &1482770437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13482,7 +13495,7 @@ Animator:
   m_GameObject: {fileID: 1482770432}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 510f1d45c0094ec41ae8b6b76a30138b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8d7b3ea5ed54342469d347a0df2a55e2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

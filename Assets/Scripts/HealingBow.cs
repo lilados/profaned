@@ -1,10 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Weapons;
 [CreateAssetMenu(menuName = "Items/Weapons/Ranged/Healbow")]
 public class HealingBow : RangedWeapon
 {
+    private void OnEnable()
+    {
+        ammo = CreateInstance<HealArrow>();
+    }
+
     public override void WeaponEffect(GameObject object_weapon)
     {
         float angle = Utility.AngleTowardsMouse(object_weapon.transform.position);
