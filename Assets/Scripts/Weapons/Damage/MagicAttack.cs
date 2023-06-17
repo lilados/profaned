@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,7 +7,7 @@ public class MagicAttack : MonoBehaviour
     [SerializeField] Transform hand;
     public MagicWeapon weapon;
     public GameObject objectWeapon;
-    
+    public PlayerController playerController;
     public GameObject projectile;
 
     [HideInInspector]public Helm defaultHelm;
@@ -24,11 +25,26 @@ public class MagicAttack : MonoBehaviour
 
     public bool manaBlocked;
 
-    
+    [Header("Magic Stats")] public int magicDamage;
+    public float magicDamageMult;
+    public float magicCritChance;
+    public float magicCritDamage;
+    public float magicCritChanceMult;
+    public float magicCritDamageMult;
+
+    private void Start()
+    {
+        playerController = gameObject.GetComponent<PlayerController>();
+        manaBarSlider = GameObject.Find("SpecialRatio").gameObject.GetComponent<Slider>();
+        manaBarSlider.value = 0f;
+    }
+
     private void Update()
     {
         if (weapon != null)
         {
+            magicDamage = (int)((playerController.baseDamage + weapon.damage + weapon.magic.projDamage) * 
+                                (1 + playerController.baseDamageMult + magicDamageMult)) + playerController.flatDamage;
             objectWeapon.GetComponent<SpriteRenderer>().sprite = weapon.Icon;
             Rotate();
             reloadTime = (float)(2 - 0.02 * weapon.castSpeed);            

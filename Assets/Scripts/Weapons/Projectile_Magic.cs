@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile_Magic : Projectile
 {
     public Sprite sprite;
-    public int damage = 10, knockForce= 20;
+    public int projDamage = 10, damage,  knockForce= 20;
     public float velocity= 6.0f, time = 0.2f;
 
     public GameObject prefab;
@@ -13,10 +13,11 @@ public class Projectile_Magic : Projectile
     
     public virtual void OnHit(GameObject player, GameObject enemy, GameObject proj)
     {
-        Vector2 dir = ((enemy.transform.position - player.transform.position).normalized)* knockForce;
-        enemy.GetComponent<KnockBackController>().TakeKnockBack(dir, time);
+        damage = player.GetComponent<MagicAttack>().magicDamage;
         if (enemy.CompareTag("Enemy"))
         {
+            Vector2 dir = ((enemy.transform.position - player.transform.position).normalized)* knockForce;
+            enemy.GetComponent<KnockBackController>().TakeKnockBack(dir, time);
             enemy.GetComponent<HealthManager>().TakeDamage(damage);
         }
         Destroy(proj);

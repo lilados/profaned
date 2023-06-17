@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Weapons;
 
@@ -9,6 +10,7 @@ public class RangedAttack : MonoBehaviour
    public RangedWeapon _weapon;
    public Slider BowPowerSlider;
    public GameObject object_weapon;
+   [HideInInspector] public PlayerController playerController;
    [Range(0, 30)] public float BowPower;
 
    [Range(0, 10)] public float MaxBowCharge;
@@ -18,11 +20,19 @@ public class RangedAttack : MonoBehaviour
    private bool CanFire = true;
 
    
+   [Header("Range Stats")] public int rangeDamage;
+   public float rangeDamageMult;
+   public float rangeCritChance;
+   public float rangeCritDamage;
+   public float rangeCritChanceMult;
+   public float rangeCritDamageMult;
+   
 
    private void Start()
    {
       BowPowerSlider = GameObject.Find("SpecialRatio").gameObject.GetComponent<Slider>();
       BowPowerSlider.value = 0f;
+      playerController = gameObject.GetComponent<PlayerController>();
    }
 
    private void Update()
@@ -31,6 +41,9 @@ public class RangedAttack : MonoBehaviour
       if (_weapon != null)
       {
          object_weapon.GetComponent<SpriteRenderer>().sprite = _weapon.Icon;
+         rangeDamage = (int)((_weapon.damage + _weapon.ammo.projDamage + playerController.baseDamage) *
+                             (playerController.baseDamageMult + rangeDamageMult + 1)) + playerController.flatDamage;
+         
          bowSpeed = _weapon.bowSpeed;
          MaxBowCharge = _weapon.bowMaxCharge;
          BowPower = _weapon.bowPower;

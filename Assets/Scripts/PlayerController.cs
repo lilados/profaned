@@ -1,5 +1,4 @@
-using System;
-using UnityEngine;
+    using UnityEngine;
 using Weapons.Damage;
 
 public class PlayerController : MonoBehaviour
@@ -10,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public GameObject MeleeSlot;
     public GameObject RangedSlot;
     public GameObject MagicSlot;
-
+    [Header("Player Equipment")]
     public Helm helmet;
     public Chest chest;
     public Leggings legs;
@@ -20,7 +19,15 @@ public class PlayerController : MonoBehaviour
     public Arm arm;
     public Torso torso;
     public Necklace neck;
-    public Character c;
+    [HideInInspector] public Character c;
+    [Header("Stats")] 
+    public int baseDamage;
+    public float baseDamageMult;
+    public int flatDamage;
+    [Space] public float baseCritChance;
+    public float baseCritChanceMult;
+    public float baseCritDamage = 1.2f;
+    public float baseCritDamageMult;
     void FixedUpdate()
     {
         

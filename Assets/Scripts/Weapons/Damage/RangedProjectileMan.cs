@@ -24,10 +24,11 @@ public class RangedProjectileMan : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = transform.right * arrowVelocity;
-        weapon = attack._weapon;
-        damage = weapon.damage;
-
+        if (GameObject.Find("Ranger") != null)
+        {
+            rb.velocity = transform.right * arrowVelocity;
+            
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col)

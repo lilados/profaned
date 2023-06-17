@@ -16,6 +16,7 @@ public class MagicWeapon : Weapon
     
     public virtual void WeaponEffect(GameObject object_weapon)
     {
+        magic = CreateInstance<AquaStaffProj>();
         float angle = Utility.AngleTowardsMouse(object_weapon.transform.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle));
 

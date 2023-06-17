@@ -6,13 +6,13 @@ using UnityEngine;
 public class Projectile_Ranged : Projectile
 {
     public Sprite Sprite;
-    public int damage = 20, knockForce = 5;
+    public int projDamage, damage, knockForce = 5;
     public float velocity = 7, time = 0.2f;
     
     
     public virtual void OnHit(GameObject player, GameObject enemy, GameObject arrow)
     {
-        
+        damage = player.GetComponent<RangedAttack>().rangeDamage;
         if(enemy.CompareTag("Enemy"))
         {
             Vector2 dir = ((enemy.transform.position - player.transform.position).normalized)* knockForce;

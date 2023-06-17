@@ -9,6 +9,7 @@ public class MeleeAttack : MonoBehaviour
     [SerializeField] Transform hand;
     public MeleeWeapon _weapon;
     public GameObject object_weapon;
+    public PlayerController playerController;
     public Animator animator;
     public float delay;
     public float waitFor;
@@ -17,25 +18,31 @@ public class MeleeAttack : MonoBehaviour
     public Transform circle;
     public float radius = 3;
 
-    public Slider meleeExhuast;
+    public Slider meleeExhaust;
+    [Header("Melee Stats")] public int meleeDamage;
+    public float meleeDamageMult;
+    public float meleeCritChance;
+    public float meleeCritDamage;
+    public float meleeCritChanceMult;
+    public float meleeCritDamageMult;
 
     private void Start()
     {
-        meleeExhuast = GameObject.Find("SpecialRatio").GetComponent<Slider>();
-        meleeExhuast.transform.GetChild(0).GetComponent<Image>().color = Color.gray;
-        meleeExhuast.transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color = new Color(0.66f, 0.66f, 0.66f);
-
+        meleeExhaust = GameObject.Find("SpecialRatio").GetComponent<Slider>();
+        meleeExhaust.transform.GetChild(0).GetComponent<Image>().color = Color.gray;
+        meleeExhaust.transform.GetChild(1).transform.GetChild(0).GetComponent<Image>().color = new Color(0.66f, 0.66f, 0.66f);
+        playerController = gameObject.GetComponent<PlayerController>();
     }
 
     private void Update()
     {
-        meleeExhuast.maxValue = 1;
-        meleeExhuast.value = 1;
+        meleeExhaust.maxValue = 1;
+        meleeExhaust.value = 1;
         if (_weapon != null)
         {
-            
-            meleeExhuast.maxValue = delay;
-            meleeExhuast.value = delay;
+            meleeDamage = (int)((_weapon.damage + playerController.baseDamage) * (1 + playerController.baseDamageMult + meleeDamageMult)) +playerController.flatDamage;
+            meleeExhaust.maxValue = delay;
+            meleeExhaust.value = delay;
             
             object_weapon.GetComponent<SpriteRenderer>().sprite = _weapon.Icon;
             if (isAttacking == false)
@@ -46,7 +53,7 @@ public class MeleeAttack : MonoBehaviour
             {
                 waitFor -= Time.deltaTime;
                 
-                meleeExhuast.value = delay - waitFor;
+                meleeExhaust.value = delay - waitFor;
             }
             radius = _weapon.radius;
             delay = (float)(2 - 0.05 * _weapon.attackSpeed);
