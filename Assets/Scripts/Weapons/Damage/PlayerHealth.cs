@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
         if (timeLeft > 0 && health != maxHealth) timeLeft -= Time.deltaTime;
         if (health == maxHealth) timeLeft = freq;
         if (timeLeft < 0) timeLeft = 0;
-        if (!regenBlocked && timeLeft == 0) Regenarate();
+        if (!regenBlocked && timeLeft == 0) Regenerate();
 
 
         healthBar.maxValue = maxHealth;
@@ -53,13 +53,13 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
-    private void Regenarate()
+    private void Regenerate()
     {
         health += amountHealed;
         timeLeft = freq;
     }
 
-    public void TakeDamage(int amount)
+    public virtual void TakeDamage(int amount)
     {
         if(amount <= def)
         {

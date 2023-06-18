@@ -22,7 +22,7 @@ MonoBehaviour:
   DegreeOffset: 0
   damage: 30
   radius: 0.5
-  attackSpeed: 25
+  attackSpeed: 20
   knockForce: 10
   time: 0.2
   critChance: 70

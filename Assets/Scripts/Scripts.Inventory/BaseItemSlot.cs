@@ -19,6 +19,8 @@ public class BaseItemSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHa
 	protected Color disabledColor = new Color(1, 1, 1, 0);
 
 	protected Item _item;
+
+	private int ItemRotation;
 	public Item Item {
 		get { return _item; }
 		set {

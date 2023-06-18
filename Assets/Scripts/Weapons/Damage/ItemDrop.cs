@@ -26,7 +26,7 @@ public class ItemDrop : MonoBehaviour
     public List<LootItem> _addedItems;
 
 
-    private void Start()
+    private void Awake()
     {
         if(inventory == null)
         {

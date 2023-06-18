@@ -847,7 +847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099734301191331824}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.416, y: -0.597, z: 0}
+  m_LocalPosition: {x: 0.387, y: -0.539, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -896,15 +896,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f9cec8976f04df648bbd3c4dfc3b192f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2099734301479099803
@@ -1019,7 +1019,7 @@ Animator:
   m_GameObject: {fileID: 2099734301479099803}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bbf5b8016e564c04e94cd2f887387e33, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1043,8 +1043,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18771982, y: -0.20903516}
-  m_Size: {x: 1.2221127, y: 1.8676438}
+  m_Offset: {x: 0.047014415, y: 0.04175639}
+  m_Size: {x: 0.8204876, y: 1.857933}
   m_Direction: 0
 --- !u!50 &2099734301479099804
 Rigidbody2D:
@@ -1090,6 +1090,7 @@ MonoBehaviour:
   freq: 0
   timeLeft: 0
   regenBlocked: 0
+  healthBar: {fileID: 0}
 --- !u!114 &2099734301479099874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1105,10 +1106,21 @@ MonoBehaviour:
   hand: {fileID: 2099734301191331825}
   _weapon: {fileID: 0}
   object_weapon: {fileID: 2099734300591311765}
+  playerController: {fileID: 0}
   animator: {fileID: 2099734300591311768}
   delay: 1.1
+  waitFor: 0
   circle: {fileID: 2099734301648937586}
   radius: 0.6
+  critChance: 0
+  critDmg: 0
+  meleeExhaust: {fileID: 0}
+  meleeDamage: 0
+  meleeDamageMult: 0
+  meleeCritChance: 0
+  meleeCritDamage: 0
+  meleeCritChanceMult: 0
+  meleeCritDamageMult: 0
 --- !u!114 &2099734301479099875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1158,6 +1170,13 @@ MonoBehaviour:
   torso: {fileID: 0}
   neck: {fileID: 0}
   c: {fileID: 0}
+  baseDamage: 0
+  baseDamageMult: 0
+  flatDamage: 0
+  baseCritChance: 0
+  baseCritChanceMult: 0
+  baseCritDamage: 1.2
+  baseCritDamageMult: 0
 --- !u!114 &2099734301821603622
 MonoBehaviour:
   m_ObjectHideFlags: 0
