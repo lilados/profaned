@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,8 +18,6 @@ public class MeleeAttack : MonoBehaviour
     private bool isAttacking;
     public Transform circle;
     public float radius = 3;
-    public float critChance;
-    public float critDmg;
 
     public Slider meleeExhaust;
     [Header("Melee Stats")] public int meleeDamage;
@@ -27,6 +26,9 @@ public class MeleeAttack : MonoBehaviour
     public float meleeCritDamage;
     public float meleeCritChanceMult;
     public float meleeCritDamageMult;
+
+    public float meleeSpeed;
+    public float meleeSpeedMult;
 
     private void Start()
     {
@@ -43,23 +45,27 @@ public class MeleeAttack : MonoBehaviour
         if (_weapon != null)
         {
             meleeDamage = (int)((_weapon.damage + playerController.baseDamage) * (1 + playerController.baseDamageMult + meleeDamageMult)) +playerController.flatDamage;
-            meleeExhaust.maxValue = delay;
-            meleeExhaust.value = delay;
+            delay = (float)(2 - 0.05 * _weapon.attackSpeed);
+            meleeExhaust.maxValue = meleeSpeed;
+            meleeExhaust.value = meleeSpeed;
+
+            object_weapon.GetComponent<Animator>().runtimeAnimatorController = _weapon.animator;
+            meleeSpeed = delay / (1 + meleeSpeedMult);
+            
+            
             
             object_weapon.GetComponent<SpriteRenderer>().sprite = _weapon.Icon;
             if (isAttacking == false)
             {
                 Rotate();
-                waitFor = delay;
+                waitFor = meleeSpeed;
             }else if (isAttacking && waitFor > 0)
             {
                 waitFor -= Time.deltaTime;
                 
-                meleeExhaust.value = delay - waitFor;
+                meleeExhaust.value = meleeSpeed - waitFor;
             }
             radius = _weapon.radius;
-            delay = (float)(2 - 0.05 * _weapon.attackSpeed);
-            object_weapon.GetComponent<Animator>().runtimeAnimatorController = _weapon.animator;
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 Attack();
@@ -100,6 +106,7 @@ public class MeleeAttack : MonoBehaviour
     {
         if (attackBlocked)
             return;
+        animator.SetFloat("SwingSpeed", 1 + meleeSpeedMult);
         animator.SetTrigger("Attack");
         attackBlocked = true;
         isAttacking = true;
@@ -108,7 +115,7 @@ public class MeleeAttack : MonoBehaviour
 
     private IEnumerator DelayAttack()
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(meleeSpeed);
         attackBlocked = false;
         isAttacking = false;
     }

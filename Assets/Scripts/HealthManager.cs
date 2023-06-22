@@ -41,6 +41,10 @@ public class HealthManager : MonoBehaviour
     private void Death()
     {
         itemDrop.ManageDrops();
+        if (CompareTag("Mineral"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
 

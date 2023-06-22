@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Mineral
   - CraftingStation
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - PlayerProj
   - Enemy
   - Walls
-  - 
+  - EnemyProj
   - 
   - 
   - 

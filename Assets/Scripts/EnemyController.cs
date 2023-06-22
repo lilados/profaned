@@ -14,12 +14,12 @@ public class EnemyController : MonoBehaviour
     public float aggroRange = 5;
     public bool dead;
 
-    private void Start()
+    public virtual void Start()
     {
         animator = gameObject.GetComponent<Animator>();
     }
 
-    private void Update()
+    public virtual void Update()
     {
         if (player == null)
         {

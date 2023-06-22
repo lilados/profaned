@@ -1,4 +1,6 @@
+using System;
 using System.Text;
+using Scripts.Inventory;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -21,9 +23,10 @@ public class Item : ScriptableObject
 
 	protected virtual void OnValidate()
 	{
-		
+        
 	}
 
+    
     public virtual Item GetCopy()
     {
         return this;
