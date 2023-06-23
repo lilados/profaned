@@ -14,8 +14,8 @@ public class MeleeAttack : MonoBehaviour
     public Animator animator;
     public float delay;
     public float waitFor;
-    private bool attackBlocked;
-    private bool isAttacking;
+    private bool AttackBlocked;
+    private bool IsAttacking;
     public Transform circle;
     public float radius = 3;
 
@@ -55,11 +55,11 @@ public class MeleeAttack : MonoBehaviour
             
             
             object_weapon.GetComponent<SpriteRenderer>().sprite = _weapon.Icon;
-            if (isAttacking == false)
+            if (IsAttacking == false)
             {
                 Rotate();
                 waitFor = meleeSpeed;
-            }else if (isAttacking && waitFor > 0)
+            }else if (IsAttacking && waitFor > 0)
             {
                 waitFor -= Time.deltaTime;
                 
@@ -104,20 +104,19 @@ public class MeleeAttack : MonoBehaviour
 
     public void Attack()
     {
-        if (attackBlocked)
+        if (AttackBlocked)
             return;
         animator.SetFloat("SwingSpeed", 1 + meleeSpeedMult);
-        animator.SetTrigger("Attack");
-        attackBlocked = true;
-        isAttacking = true;
+        animator.SetTrigger("Attack"); AttackBlocked = true;
+        IsAttacking = true;
         StartCoroutine(DelayAttack());
     }
 
     private IEnumerator DelayAttack()
     {
         yield return new WaitForSeconds(meleeSpeed);
-        attackBlocked = false;
-        isAttacking = false;
+        AttackBlocked = false;
+        IsAttacking = false;
     }
 
     private void OnDrawGizmosSelected()
