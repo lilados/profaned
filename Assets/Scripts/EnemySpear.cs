@@ -3,20 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpear : Projectile
+namespace Projectiles
 {
-    public override void Sett()
-    {
-        projSprite = Resources.Load<Sprite>("wlocznia");
-        projName = "Spear";
-        projVelocity = 0.9f;
-        baseDamage = 40;
-    }
 
-    public override void OnHit(GameObject player, GameObject enemy)
+    public class EnemySpear : Projectile
     {
-        base.OnHit(player, enemy);
-        player.GetComponent<PlayerHealth>().health -= baseDamage;
-        
+        public override void SetDefaults()
+        {
+            base.SetDefaults();
+            projSprite = Resources.Load<Sprite>("wlocznia");
+            projName = "Spear";
+        }
+
+        public override void OnHit(GameObject sender, GameObject target, GameObject pre)
+        {
+            base.OnHit(sender, target, pre);
+            if (sender.CompareTag("Enemy"))
+            {
+                if (target.CompareTag("Player"))
+                {
+                    target.GetComponent<PlayerHealth>().TakeDamage(190);
+                }
+                Destroy(pre);
+            }
+
+        }
+
     }
 }

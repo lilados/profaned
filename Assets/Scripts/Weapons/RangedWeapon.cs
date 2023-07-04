@@ -1,10 +1,10 @@
+using System;
 using UnityEngine;
 using Weapons.Damage;
 
 namespace Weapons
 {
-    [CreateAssetMenu(fileName = "New Weapon", menuName = "Items/Weapons/Ranged")]
-
+    
     public class RangedWeapon : Weapon
     {
         [Header("Stats")]
@@ -12,17 +12,31 @@ namespace Weapons
         public int bowPower;
         public float bowSpeed;
         public float bowMaxCharge;
-        [Space]
-        [Header("Misc")]
-        public Projectile_Ranged ammo;
-        public GameObject arrowPrefab;
-        
-        public virtual void WeaponEffect(GameObject object_weapon)
+        [HideInInspector] public GameObject ranger;
+        public Projectile projectile;
+
+        private void OnEnable()
         {
-            float angle = Utility.AngleTowardsMouse(object_weapon.transform.position);
+            SetDefaults();
+        }
+
+        public virtual void SetDefaults()
+        {
+            ranger = GameObject.Find("Ranger");
+            damage = 33;
+            bowPower = 3;
+            bowSpeed = 5;
+            bowMaxCharge = 6;
+            projectile = CreateInstance<Projectile>();
+        }
+        
+        public virtual void WeaponEffect(GameObject objectWeapon)
+        {
+            float angle = Utility.AngleTowardsMouse(objectWeapon.transform.position);
             Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle));
 
-            Instantiate(arrowPrefab, object_weapon.transform.position, rot);
+            Instantiate(Utility.GetGameObjectWithProjectile(ranger, CreateInstance<Projectile>())
+                , objectWeapon.transform.position, rot);
         }
     }
 }

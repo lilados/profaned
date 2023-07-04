@@ -1,6 +1,6 @@
+using Projectiles;
 using UnityEngine;
 using Weapons.Damage;
-
 [CreateAssetMenu(fileName = "New Magic Weapon", menuName = "Items/Weapons/Magic")]
 
 public class MagicWeapon : Weapon
@@ -11,12 +11,12 @@ public class MagicWeapon : Weapon
     public float castSpeed;
     [Space]
     [Header("Misc")]
-    public Projectile_Magic magic;
+    public Projectile magicProjectile;
     public GameObject prefab;
     
     public virtual void WeaponEffect(GameObject object_weapon)
     {
-        magic = CreateInstance<AquaStaffProj>();
+        magicProjectile = CreateInstance<AquaStaffProj>();
         float angle = Utility.AngleTowardsMouse(object_weapon.transform.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle));
 

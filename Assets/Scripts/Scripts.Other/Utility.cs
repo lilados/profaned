@@ -55,4 +55,24 @@ public static class Utility
 
         return furthest;
     }
+
+    public static float GetAngleBetweenGameObjects(GameObject pivot, GameObject target)
+    {
+        Vector3 pivotPos = target.transform.position;
+
+        pivotPos.x -= pivot.transform.position.x;
+        pivotPos.y -= pivot.transform.position.y;
+
+
+        float angle = Mathf.Atan2(pivotPos.y, pivotPos.x) * Mathf.Rad2Deg;
+        return angle;
+    }
+
+    public static GameObject GetGameObjectWithProjectile(GameObject sender, Projectile projectile)
+    {
+        GameObject prefab = Resources.Load<GameObject>("ProjectilePrefab");
+        prefab.GetComponent<ProjectileMan>().proj = projectile;
+        prefab.GetComponent<ProjectileMan>().proj.sender = sender;
+        return prefab;
+    }
 }

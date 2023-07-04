@@ -1,2 +1,0 @@
-# profaned
-profanity gra xdd

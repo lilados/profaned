@@ -1,25 +1,31 @@
 using System;
 using UnityEngine;
 using SOs.Modifiers;
-public class HealArrow : Projectile_Ranged
+public class HealArrow : Projectile
 {
-    private void OnEnable()
+    
+    public override void SetDefaults()
     {
-        damage = 40;
+        base.SetDefaults();
+        projVelocity = 3.8f;
         knockForce = 10;
-        time = 0.2f;
-        velocity = 6;
-        Sprite = Resources.Load<Sprite>("healArrow");
+        projSprite = Resources.Load<Sprite>("healArrow");
     }
 
-    public override void OnHit(GameObject player, GameObject enemy, GameObject arrow)
+    public override void OnHit(GameObject sender, GameObject target, GameObject projPrefab)
     {
-        base.OnHit(player,enemy,arrow);
-        if (enemy.CompareTag("Enemy"))
+        base.OnHit(sender, target, projPrefab);
+        if (sender.CompareTag("Player"))
         {
-            player.GetComponent<PlayerHealth>().health += 20;
-            enemy.GetComponent<ModifierManager>().AddMod(CreateInstance<OnFire>(), 2f, 1, true);
+            if (target.CompareTag("Enemy"))
+            {
+                target.GetComponent<HealthManager>().TakeDamage(50);
+            }
+
+            if (target.CompareTag("Player"))
+            {
+                target.GetComponent<PlayerHealth>().health += 30;
+            }
         }
-        
     }
 }

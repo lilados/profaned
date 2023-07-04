@@ -11,6 +11,7 @@ public class EmpowermentBelt : Torso
         Icon = Resources.Load<Sprite>("pib belt");
         ItemName = "Empowering Belt";
         EquipmentType = EquipmentType.Torso;
+        
     }
 
     public override void Equip(Character c)
@@ -21,6 +22,8 @@ public class EmpowermentBelt : Torso
             c.player.GetComponent<MeleeAttack>().meleeSpeedMult += 0.3f;
             c.player.GetComponent<MeleeAttack>().meleeDamageMult += 0.6f;
         }
+
+        c.player.GetComponent<PlayerController>().baseDamage += 80;
     }
 
     public override void UnEquip(Character c)
@@ -31,5 +34,7 @@ public class EmpowermentBelt : Torso
             c.player.GetComponent<MeleeAttack>().meleeSpeedMult -= 0.3f;
             c.player.GetComponent<MeleeAttack>().meleeDamageMult -= 0.6f;
         }
+        
+        c.player.GetComponent<PlayerController>().baseDamage -= 80;
     }
 }

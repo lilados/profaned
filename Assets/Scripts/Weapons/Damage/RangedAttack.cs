@@ -41,7 +41,14 @@ public class RangedAttack : MonoBehaviour
       if (_weapon != null)
       {
          object_weapon.GetComponent<SpriteRenderer>().sprite = _weapon.Icon;
-         rangeDamage = (int)((_weapon.damage + _weapon.ammo.projDamage + playerController.baseDamage) *
+         
+         
+         
+         
+         
+         rangeDamage = (int)((_weapon.damage + 
+                              playerController.baseDamage + 
+                              _weapon. projectile.baseDamage) *
                              (playerController.baseDamageMult + rangeDamageMult + 1)) + playerController.flatDamage;
          
          bowSpeed = _weapon.bowSpeed;

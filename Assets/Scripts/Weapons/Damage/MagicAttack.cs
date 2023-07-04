@@ -43,12 +43,12 @@ public class MagicAttack : MonoBehaviour
     {
         if (weapon != null)
         {
-            magicDamage = (int)((playerController.baseDamage + weapon.damage + weapon.magic.projDamage) * 
+            magicDamage = (int)((playerController.baseDamage + weapon.damage + weapon.magicProjectile.baseDamage) * 
                                 (1 + playerController.baseDamageMult + magicDamageMult)) + playerController.flatDamage;
             objectWeapon.GetComponent<SpriteRenderer>().sprite = weapon.Icon;
             Rotate();
             reloadTime = (float)(2 - 0.02 * weapon.castSpeed);            
-            if (reloadTime <= 0) reloadTime = softCap;
+            if (softCap <= 0) reloadTime = softCap;
         }
         if (weapon == null) objectWeapon.gameObject.GetComponent<SpriteRenderer>().sprite = null;
 
@@ -81,14 +81,6 @@ public class MagicAttack : MonoBehaviour
                     mana -= weapon.manaCost;
                 }
             }
-        }
-        if (weapon != null)
-        {
-            manaBarSlider.gameObject.SetActive(true);
-        }
-        else
-        {  
-            manaBarSlider.gameObject.SetActive(false);
         }
     }
 

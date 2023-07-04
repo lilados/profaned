@@ -6,7 +6,7 @@ using Random = System.Random;
 [Serializable] public class LootItem
 {
     public Item item;
-    public int amount;
+    public int quantity, maxQuantity;
     public int dropChance;
 }
 
@@ -15,7 +15,7 @@ public class FromList
 {
     public List<LootItem> item;
     public int totalWeight;
-    public int amountDropped;
+    public int baseQuantity;
 }
 public class ItemDrop : MonoBehaviour
 {
@@ -45,9 +45,22 @@ public class ItemDrop : MonoBehaviour
 
         for (int j = 0; j < _addedItems.Count; j++)
         {
-            for(int i = 0; i < _addedItems[j].amount; i++)
+            if (_addedItems[j].maxQuantity == 0 || _addedItems[j].maxQuantity == _addedItems[j].quantity)
             {
-                inventory.AddItem(_addedItems[j].item);
+                for(int i = 0; i < _addedItems[j].quantity; i++) {
+                    inventory.AddItem(_addedItems[j].item);
+                }
+                Debug.Log("= or 0");
+            }
+            else
+            {
+                int endQuantity;
+                Random r = new Random();
+                endQuantity = r.Next(_addedItems[j].quantity, _addedItems[j].maxQuantity);
+                for(int i = 0; i < endQuantity; i++) {
+                    inventory.AddItem(_addedItems[j].item);
+                }
+                Debug.Log("!=");
             }
         }
     }
@@ -70,7 +83,7 @@ public class ItemDrop : MonoBehaviour
             Calculate();
             if (item.dropChance >= chance)
             {
-                for (int j = 0; j < item.amount ; j++)
+                for (int j = 0; j < item.quantity ; j++)
                 {
                     inventory.AddItem(item.item);
                 }
@@ -95,7 +108,7 @@ public class ItemDrop : MonoBehaviour
         int max = GetTableWeight(list);
 
 
-        for (int j = 0; j < list.amountDropped; j++)
+        for (int j = 0; j < list.baseQuantity; j++)
         {
             
             CalculateForN(max);

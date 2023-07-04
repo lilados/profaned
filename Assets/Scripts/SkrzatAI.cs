@@ -1,14 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using Projectiles;
 
-public class SkrzatAI : EnemyController
+public class SkrzatAI : EnemyAI
 {
-    public int damage;
-    public float spearVelocity;
-    public GameObject weaponPrefab;
+    
     [SerializeField] public GameObject hand;
 
     public UnityEvent launchProjectile;
@@ -16,25 +16,15 @@ public class SkrzatAI : EnemyController
     public override void Start()
     {
         base.Start();
+        attackInterval = 2;
     }
-
-    public void LaunchProjectile()
-    {
-        launchProjectile?.Invoke();
-    }
-
 
     public void Attack()
     {
-
-        GameObject pla = Utility.GetClosestEnemy(GameObject.FindGameObjectsWithTag("Player"), gameObject.transform);
-
-        float angle = Utility.AngleTowardsMouse(pla.transform.position);
-        hand.transform.GetChild(0).transform.rotation = Quaternion.Euler(new Vector3(0f,0f,angle));
-        
-        Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f ,hand.transform.rotation.z));
+        float angle = Utility.GetAngleBetweenGameObjects(gameObject, player);
+        Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f ,angle));
         
         
-        Instantiate(weaponPrefab, hand.transform.GetChild(0).transform.position, rot);
+        Instantiate(Utility.GetGameObjectWithProjectile(gameObject, ScriptableObject.CreateInstance<EnemySpear>()), hand.transform.GetChild(0).transform.position, rot);
     }
 }

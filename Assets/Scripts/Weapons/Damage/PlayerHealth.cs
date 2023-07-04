@@ -23,8 +23,16 @@ public class PlayerHealth : MonoBehaviour
     public float freq, timeLeft;
     public bool regenBlocked;
 
+    public float knockBackResistance;
 
     public Slider healthBar;
+    private Rigidbody2D _rigidbody2D;
+
+    private void Awake()
+    {
+        _rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+    }
+
     void Start()
     {
         healthBar = GameObject.Find("HealthBar").GetComponent<Slider>();
@@ -69,5 +77,27 @@ public class PlayerHealth : MonoBehaviour
         {
             health -= amount - def;
         }
+    }
+
+    public virtual void TakeKnockBack(Vector2 knockForce)
+    {
+        if (knockBackResistance > -1)
+        {
+            knockForce /= (knockBackResistance + 1);
+        }
+        else
+        {
+            knockForce = new Vector2(0, 0);
+        }
+        gameObject.GetComponent<Rigidbody2D>().AddForce(knockForce, ForceMode2D.Impulse);
+
+        StartCoroutine(ResetVelocity());
+    }
+
+    private IEnumerator ResetVelocity()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        _rigidbody2D.velocity = Vector2.zero;
     }
 }

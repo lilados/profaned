@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AquaStaffProj : Projectile_Magic
+public class AquaStaffProj : Projectile
 {
     private void OnEnable()
     {
-        sprite = Resources.Load<Sprite>("aquastaff_proj");
-        projDamage = 22;
+        projSprite = Resources.Load<Sprite>("aquastaff_proj");
+        baseDamage = 22;
     }
 }

@@ -1,21 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class AnimationEventHelper : MonoBehaviour
 {
-   public UnityEvent OnAnimationEventTriggered, OnAttackPerformed;
-
-   public void TriggerEvent()
+   public bool s;
+   private void Update()
    {
-      OnAnimationEventTriggered?.Invoke();
+      if (GameObject.Find("Melee").GetComponent<MeleeAttack>()._weapon != null && !gameObject.GetComponent<PolygonCollider2D>())
+      {
+         PolygonCollider2D pol = gameObject.AddComponent<PolygonCollider2D>();
+         pol.isTrigger = true;
+      }else if (GameObject.Find("Melee").GetComponent<MeleeAttack>()._weapon == null)
+      {
+         Destroy(gameObject.GetComponent<PolygonCollider2D>());
+      }
+
+      if (GameObject.Find("Melee").GetComponent<MeleeAttack>()._weapon != null && !s)
+      {
+         SetPolygonShape.SetColliderFromSprite(gameObject);
+         
+         
+         s = true;
+      }
    }
 
-   public void TriggerAttack()
+   private void OnTriggerEnter2D(Collider2D other)
    {
-      OnAttackPerformed?.Invoke();
+      Debug.Log("jej");
    }
-   
-   
+
+   private void OnTriggerStay2D(Collider2D other)
+   {
+      OnTriggerEnter2D(other);
+   }
 }

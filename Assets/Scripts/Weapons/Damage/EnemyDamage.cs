@@ -30,10 +30,10 @@ public class EnemyDamage : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
 
-        if (col != null)
+        if (col.gameObject.CompareTag("Player"))
         {
             col.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
-
+    
     }
 }

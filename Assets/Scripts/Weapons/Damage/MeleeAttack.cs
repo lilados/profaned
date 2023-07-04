@@ -19,6 +19,8 @@ public class MeleeAttack : MonoBehaviour
     public Transform circle;
     public float radius = 3;
 
+    public int safeFrames;
+
     public Slider meleeExhaust;
     [Header("Melee Stats")] public int meleeDamage;
     public float meleeDamageMult;
@@ -29,7 +31,7 @@ public class MeleeAttack : MonoBehaviour
 
     public float meleeSpeed;
     public float meleeSpeedMult;
-
+    
     private void Start()
     {
         meleeExhaust = GameObject.Find("SpecialRatio").GetComponent<Slider>();
@@ -70,17 +72,13 @@ public class MeleeAttack : MonoBehaviour
             {
                 Attack();
             }
-
-            
-            
-            
+  
         }
 
         if (_weapon == null)
         {
             object_weapon.gameObject.GetComponent<SpriteRenderer>().sprite = null;
             object_weapon.GetComponent<Animator>().runtimeAnimatorController = null;
-
         }
     }
 
@@ -99,7 +97,6 @@ public class MeleeAttack : MonoBehaviour
     {
         float angle = Utility.AngleTowardsMouse(hand.position);
         hand.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle - _weapon.DegreeOffset));
-        
     }
 
     public void Attack()
@@ -128,14 +125,13 @@ public class MeleeAttack : MonoBehaviour
 
     public void DetectColliders()
     {
-        foreach (Collider2D collider in Physics2D.OverlapCircleAll(circle.position, radius))
+        foreach (Collider2D collider1 in Physics2D.OverlapCircleAll(circle.position, radius))
         {
-            if (collider.CompareTag("Enemy") || collider.CompareTag("Mineral"))
+            if (collider1.CompareTag("Enemy") || collider1.CompareTag("Mineral"))
             {
-                _weapon.WeaponEffect( gameObject, collider.gameObject);
-            } 
+                _weapon.WeaponEffect(gameObject, collider1.gameObject);
+            }
         }
     }
 
-    
 }
