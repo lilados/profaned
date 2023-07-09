@@ -68,7 +68,7 @@ public static class Utility
         return angle;
     }
 
-    public static GameObject GetGameObjectWithProjectile(GameObject sender, Projectile projectile)
+    public static GameObject GetProjectile(GameObject sender, Projectile projectile)
     {
         GameObject prefab = Resources.Load<GameObject>("ProjectilePrefab");
         prefab.GetComponent<ProjectileMan>().proj = projectile;

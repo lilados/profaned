@@ -15,12 +15,9 @@ namespace Weapons
         [HideInInspector] public GameObject ranger;
         public Projectile projectile;
 
-        private void OnEnable()
-        {
-            SetDefaults();
-        }
+        
 
-        public virtual void SetDefaults()
+        public override void SetDefaults()
         {
             ranger = GameObject.Find("Ranger");
             damage = 33;
@@ -35,7 +32,7 @@ namespace Weapons
             float angle = Utility.AngleTowardsMouse(objectWeapon.transform.position);
             Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle));
 
-            Instantiate(Utility.GetGameObjectWithProjectile(ranger, CreateInstance<Projectile>())
+            Instantiate(Utility.GetProjectile(ranger, CreateInstance<Projectile>())
                 , objectWeapon.transform.position, rot);
         }
     }

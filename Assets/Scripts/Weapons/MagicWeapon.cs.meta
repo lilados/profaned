@@ -5,9 +5,9 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - Icon: {instanceID: 0}
-  - projectile: {instanceID: 0}
-  - magic: {instanceID: 0}
-  - prefab: {fileID: 990402569111725196, guid: 8044a142c9089dc44933d75d8137e03b, type: 3}
+  - animator: {instanceID: 0}
+  - mage: {fileID: 2525370315312931235, guid: 81e2007fe3b0da64488699327f76c6c0, type: 3}
+  - magicProjectile: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

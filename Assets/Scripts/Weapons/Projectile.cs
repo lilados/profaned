@@ -21,6 +21,7 @@ using UnityEngine;
 
         public virtual void OnHit(GameObject sender, GameObject target, GameObject projPrefab)
         {
+            
             directionToPlayer = (target.transform.position - sender.transform.position).normalized * knockForce;
         }
 

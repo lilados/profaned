@@ -21,11 +21,20 @@ public class Item : ScriptableObject
 
     protected static readonly StringBuilder sb = new StringBuilder();
 
+    private void OnEnable()
+    {
+        SetDefaults();
+    }
+
+    public virtual void SetDefaults()
+    {
+        
+    }
 	protected virtual void OnValidate()
 	{
         
 	}
-
+    
     
     public virtual Item GetCopy()
     {

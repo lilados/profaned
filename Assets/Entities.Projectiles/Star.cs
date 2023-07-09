@@ -25,8 +25,8 @@ namespace Projectiles
                 {
                     target.GetComponent<PlayerHealth>().TakeDamage(190);
                     target.GetComponent<PlayerHealth>().TakeKnockBack(directionToPlayer);
+                    Destroy(pre);
                 }
-                Destroy(pre);
             }
         }
 

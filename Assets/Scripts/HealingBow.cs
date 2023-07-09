@@ -11,8 +11,8 @@ public class HealingBow : RangedWeapon
         Quaternion rot1 = Quaternion.Euler(new Vector3(0f, 0f, angle+ 4));
         Quaternion rot2 = Quaternion.Euler(new Vector3(0f, 0f, angle- 4));
 
-        Instantiate(Utility.GetGameObjectWithProjectile(ranger, CreateInstance<HealArrow>()), object_weapon.transform.position, rot1);
+        Instantiate(Utility.GetProjectile(ranger, CreateInstance<HealArrow>()), object_weapon.transform.position, rot1);
         
-        Instantiate(Utility.GetGameObjectWithProjectile(ranger, CreateInstance<HealArrow>()), object_weapon.transform.position, rot2);
+        Instantiate(Utility.GetProjectile(ranger, CreateInstance<HealArrow>()), object_weapon.transform.position, rot2);
     }
 }

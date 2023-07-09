@@ -10,16 +10,25 @@ public class MagicWeapon : Weapon
     public int manaCost;
     public float castSpeed;
     [Space]
-    [Header("Misc")]
+    [Header("Misc")] 
+    public GameObject mage;
     public Projectile magicProjectile;
-    public GameObject prefab;
-    
+
+    public override void SetDefaults()
+    {
+        base.SetDefaults();
+        mage = Resources.Load<GameObject>("Mage");
+        magicProjectile = CreateInstance<AquaStaffProj>();
+    }
+
     public virtual void WeaponEffect(GameObject object_weapon)
     {
         magicProjectile = CreateInstance<AquaStaffProj>();
         float angle = Utility.AngleTowardsMouse(object_weapon.transform.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle));
 
-        Instantiate(prefab, object_weapon.transform.position, rot);    
+        Instantiate(
+            Utility.GetProjectile(mage,CreateInstance<AquaStaffProj>())
+            , object_weapon.transform.position, rot);    
     }
 }

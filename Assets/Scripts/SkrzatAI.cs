@@ -25,6 +25,7 @@ public class SkrzatAI : EnemyAI
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f ,angle));
         
         
-        Instantiate(Utility.GetGameObjectWithProjectile(gameObject, ScriptableObject.CreateInstance<EnemySpear>()), hand.transform.GetChild(0).transform.position, rot);
+        Instantiate(Utility.GetProjectile(gameObject, ScriptableObject.CreateInstance<EnemySpear>()), hand.transform.GetChild(0).transform.position, rot);
+        
     }
 }
